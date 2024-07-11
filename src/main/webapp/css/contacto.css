@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+body{
+    background: #FBF9F9;
+}
+.text_ti{
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 35px;
+    margin: 25px;
+    font-weight: bold;
+    color: #5B5252;
+}
+.contenedor_acerca{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 200px 50px 200px;
+    background: #FFA800;
+}
+.contenedor_acerca h1{
+    font-weight: bold;
+    font-family: "Kanit", sans-serif;
+    margin-bottom: 50px;
+    font-size: 35px;
+}
+.contenedor_acerca p{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.contenedor_mision{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 200px 50px 200px;
+  
+}
+.contenedor_mision h1{
+    font-weight: bold;
+    font-family: "Kanit", sans-serif;
+    margin-bottom: 50px;
+    font-size: 35px;
+}
+.contenedor_mision p{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.contenedor_metas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 200px 50px 200px;
+    background: #FFA800;
+}
+.contenedor_metas h1{
+    font-weight: bold;
+    font-family: "Kanit", sans-serif;
+    margin-bottom: 50px;
+    font-size: 35px;
+}
+.contenedor_metas p{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.contenedor_cola{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 200px 50px 200px;
+   
+}
+.contenedor_cola h1{
+    font-weight: bold;
+    font-family: "Kanit", sans-serif;
+    margin-bottom: 50px;
+    font-size: 35px;
+}
+.contenedor_cola p{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+footer{
+    background: black;
+    text-align: center;
+    padding: 100px;
+}
+footer h1{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}

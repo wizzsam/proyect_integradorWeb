@@ -1,0 +1,92 @@
+.titulo_contac {
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 80px;
+    margin-top: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 800px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.input-text {
+    width: 350px;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.label {
+    margin-bottom: 5px;
+    font-family: "Ubuntu", sans-serif;
+    color: black;
+}
+
+input[type="text"], .input-text {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    flex: 1;
+    margin-right: 10px; /* Añadir margen entre los inputs */
+}
+
+input[type="text"]:last-child, .input-text:last-child {
+    margin-right: 0; /* Quitar margen del último input */
+}
+
+.select-menu {
+    padding: 10px;
+    background: rgb(255, 255, 255);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 250px;
+}
+
+.form-group1 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.form-group1 .input-text {
+    width: 250px;
+}
+
+.contenedor_formulario {
+    margin-bottom: 50px;
+}
+
+.input-file {
+    width: 350px;
+}
+
+.btn-registrar {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Ubuntu", sans-serif;
+    margin-bottom: 20px;
+}
+
+.btn-registrar:hover {
+    background-color: #45a049;
+}
+

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      lang="en">
+    <h:head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Restaurante</title>
+        <link rel="stylesheet" href="css/navbar.css"/>
+        <link rel="stylesheet" href="css/reset.css"/>
+        <link rel="stylesheet" href="css/contacto.css"/>
+        <link rel="stylesheet" href="css/restaurante.css"/>
+        <link rel="stylesheet" href="css/subcontac.css"/>
+    </h:head>
+
+    <h:body>
+        <div class="navbar">
+            <div class="logo">
+                <h:link outcome="index.xhtml">
+                    <h:graphicImage value="imagenes/Logo_SaborOpinion.png" alt="logo" height="150" width="150"/>
+                </h:link>
+            </div>
+
+            <ul class="links">
+                <li><h:link class="a" outcome="#">Inicio</h:link></li>
+                <li><h:link class="a" outcome="#">Nosotros</h:link></li>
+                <li><h:link class="a" outcome="#">Reseñas</h:link></li>
+                <li><h:link class="a" outcome="#">Contacto</h:link></li>
+                <li><h:link class="a" outcome="#">Restaurante</h:link></li>
+            </ul>
+
+            <h:link outcome="login.xhtml" styleClass="action_btn">Iniciar Sesion</h:link>
+        </div>
+
+        <div class="dropdown_menu">
+            <li><h:link class="a" outcome="#">Inicio</h:link></li>
+            <li><h:link class="a" outcome="#">Nosotros</h:link></li>
+            <li><h:link class="a" outcome="#">Reseñas</h:link></li>
+            <li><h:link class="a" outcome="#">Contacto</h:link></li>
+            <li><h:link class="a" outcome="contac.xhtml">Restaurante</h:link></li>
+            <li><h:link  class="a" outcome="login.xhtml" styleClass="action_btn">Iniciar Sesion</h:link></li>
+        </div>
+
+          <h1 class="titulo_contac">REGISTRA TU RESTAURANTE CON NOSOTROS</h1>
+        <div class="contenedor_formulario">
+            <h:form enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="form-group">
+                        <h:outputLabel for="nombre_restaurante1" value="Nombre Restaurante" styleClass="label" />
+                        <h:inputText id="nombre_restaurante1" styleClass="input-text"/>
+                    </div>
+                    <div class="form-group">
+                        <h:outputLabel for="nombre_restaurante2" value="Nombre Restaurante" styleClass="label"/>
+                        <h:inputText id="nombre_restaurante2" styleClass="input-text"/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <h:outputLabel for="comida1" value="Tipo de Comida" styleClass="label"/>
+                        <h:selectOneMenu id="comida1" styleClass="select-menu">
+                            <f:selectItem itemLabel="" itemValue="" />
+                            <f:selectItem itemLabel="Oriental" itemValue="opcion1" />
+                            <f:selectItem itemLabel="Nacional" itemValue="opcion2" />
+                            <f:selectItem itemLabel="Japonesa" itemValue="opcion3" />
+                            <f:selectItem itemLabel="Vegana" itemValue="opcion4" />
+                        </h:selectOneMenu>
+                    </div>
+                    <div class="form-group">
+                        <h:outputLabel for="comida2" value="Comida del día" styleClass="label"/>
+                        <h:selectOneMenu id="comida2" styleClass="select-menu">
+                            <f:selectItem itemLabel="" itemValue="" />
+                            <f:selectItem itemLabel="Desayuno" itemValue="opcion1" />
+                            <f:selectItem itemLabel="Almuerzo" itemValue="opcion2" />
+                            <f:selectItem itemLabel="Cena" itemValue="opcion3" />
+                        </h:selectOneMenu>
+                    </div>
+                    <div class="form-group">
+                        <h:outputLabel for="comida3" value="Tipo de Establecimiento" styleClass="label"/>
+                        <h:selectOneMenu id="comida3" styleClass="select-menu">
+                            <f:selectItem itemLabel="" itemValue="" />
+                            <f:selectItem itemLabel="Restaurante" itemValue="opcion1" />
+                            <f:selectItem itemLabel="Huarique" itemValue="opcion2" />
+                            <f:selectItem itemLabel="Al paso" itemValue="opcion3" />
+                        </h:selectOneMenu>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group">
+                        <h:outputLabel for="direccion_restaurante" value="Dirección Restaurante" styleClass="label"/>
+                        <h:inputText id="direccion_restaurante" styleClass="input-text"/>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group1">
+                        <h:outputLabel for="telefono" value="Teléfono" styleClass="label"/>
+                        <h:inputText id="telefono" styleClass="input-text"/>
+                    </div>
+                    <div class="form-group1">
+                        <h:outputLabel for="pagina_web" value="Página web" styleClass="label"/>
+                        <h:inputText id="pagina_web" styleClass="input-text"/>
+                    </div>
+                    <div class="form-group">
+                        <h:outputLabel for="precio" value="Precio" styleClass="label"/>
+                        <h:selectOneMenu id="precio" styleClass="select-menu">
+                            <f:selectItem itemLabel="" itemValue="" />
+                            <f:selectItem itemLabel="Caro" itemValue="opcion1" />
+                            <f:selectItem itemLabel="Moderado" itemValue="opcion2" />
+                            <f:selectItem itemLabel="Económico" itemValue="opcion3" />
+                        </h:selectOneMenu>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group">
+                        <h:outputLabel for="subir_foto" value="Subir Foto" styleClass="label"/>
+                        <h:inputFile id="subir_foto" styleClass="input-file"/>
+                    </div>
+                </div>
+                <h:commandButton value="Registrar" styleClass="btn-registrar" />
+            </h:form>
+            <footer>
+                <h1>SABOR OPINION</h1>
+            </footer>
+        </div>
+    </h:body>
+</html>

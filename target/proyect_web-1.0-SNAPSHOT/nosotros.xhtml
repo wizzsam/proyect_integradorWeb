@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      lang="en">
+
+<h:head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="css/navbar.css"/>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/contacto.css"/>
+</h:head>
+
+<h:body>
+    <div class="navbar">
+        <div class="logo">
+            <h:link outcome="index.xhtml">
+                <h:graphicImage value="imagenes/Logo_SaborOpinion.png" alt="logo" height="150" width="150"/>
+            </h:link>
+        </div>
+
+        <ul class="links">
+            <li><h:link class="a" outcome="#">Inicio</h:link></li>
+            <li><h:link class="a" outcome="#">Nosotros</h:link></li>
+            <li><h:link class="a" outcome="#">Reseñas</h:link></li>
+            <li><h:link class="a" outcome="#">Contacto</h:link></li>
+            <li><h:link class="a" outcome="#">Restaurante</h:link></li>
+        </ul>
+
+        <h:link outcome="login.xhtml" styleClass="action_btn">Iniciar Sesion</h:link>
+    </div>
+
+    <div class="dropdown_menu">
+        <li><h:link class="a" outcome="#">Inicio</h:link></li>
+        <li><h:link class="a" outcome="#">Nosotros</h:link></li>
+        <li><h:link class="a" outcome="#">Reseñas</h:link></li>
+        <li><h:link class="a" outcome="#">Contacto</h:link></li>
+        <li><h:link class="a" outcome="contac.xhtml">Restaurante</h:link></li>
+        <li><h:link  class="a" outcome="login.xhtml" styleClass="action_btn">Iniciar Sesion</h:link></li>
+    </div>
+    
+    <h1 class="text_ti">Sabor Opinion</h1>
+    <div class="contenedor_acerca">
+        <h1>ACERCA DE LA PÁGINA</h1>
+        <p>
+            Sabor Opinión es una página web dedicada a proporcionar reseñas detalladas y opiniones de usuarios sobre una variedad de restaurantes.
+            Aquí puedes encontrar calificaciones, evaluaciones de comida, servicio, ambiente y más, compartidas por la comunidad de usuarios.
+        </p>
+    </div>
+    
+    <div class="contenedor_mision">
+        <h1>MISION</h1>
+        <p>
+            Nuestra misión es ayudarte a tomar decisiones informadas sobre dónde comer y disfrutar de experiencias gastronómicas memorables.
+        </p>
+    </div>
+    
+    <div class="contenedor_metas">
+        <h1>METAS Y OBJETIVOS</h1>
+        <p>
+            Sabor Opinión es una página web dedicada a proporcionar reseñas detalladas y opiniones de usuarios sobre una variedad de restaurantes.
+            Aquí puedes encontrar calificaciones, evaluaciones de comida, servicio, ambiente y más, compartidas por la comunidad de usuarios.
+            Nuestra misión es ayudarte a tomar decisiones informadas sobre dónde comer y disfrutar de experiencias gastronómicas memorables.
+        </p>
+    </div>
+    
+    <div class="contenedor_cola">
+        <h1>COLABORADORES</h1>
+        <p>
+            ABEL FERNANDEZ PELAEZ <br/>
+            RAFAEL MEDINA ARTEAGA <br/>
+            FRANCO HIROMOTO CORONEL <br/>
+            FREDDY HUAMANCHUMO RODRIGUEZ <br/>
+            OMAR VILLANUEVA PASTOR
+        </p>
+    </div>
+
+    <footer>
+        <h1>SABOR OPINION</h1>
+    </footer>
+</h:body>
+
+</html>
