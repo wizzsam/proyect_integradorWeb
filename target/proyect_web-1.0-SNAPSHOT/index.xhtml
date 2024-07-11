@@ -1,15 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/XHtml.xhtml to edit this template
--->
+
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>TODO supply a title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <h:head>
+        <meta charset="UTF-8" />
+        <title>Sabor Opinion</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="css/estilos.css" />
+        <link rel="stylesheet" href="css/reset.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/navbar.css" />
+        <link rel="stylesheet" href="css/flex.css" />
+        <link rel="stylesheet" href="css/styleContact.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    </h:head>
+
+    <h:body>
+        <div class="navbar">
+            <div class="logo">
+                <h:link outcome="index.xhtml">
+                    <h:graphicImage url="imagenes/Logo_SaborOpinion.png" alt="logo" height="150px" width="150px" />
+                </h:link>
+            </div>
+            <ul class="links">
+                <li><h:link outcome="index.xhtml">Inicio</h:link></li>
+                <li><h:link outcome="nosotros.xhtml">Nosotros</h:link></li>
+                <li><h:link outcome="resena.xhtml">Reseñas</h:link></li>
+                <li><h:link outcome="contact.xhtml">Contacto</h:link></li>
+                <li><h:link outcome="restaurantes.xhtml">Restaurante</h:link></li>
+                
+            </ul>
+            <h:link outcome="login.xhtml" styleClass="action_btn">Iniciar Sesión</h:link>
+        </div>
+
+        <div class="dropdown_menu">
+            <li><h:link outcome="index.xhtml">Inicio</h:link></li>
+            <li><h:link outcome="about.xhtml">Nosotros</h:link></li>
+            <li><h:link outcome="resena.xhtml">Reseñas</h:link></li>
+            <li><h:link outcome="contact.xhtml">Contacto</h:link></li>
+            <li><h:link outcome="login.xhtml" styleClass="action_btn">Iniciar Sesión</h:link></li>
+        </div>
+
+        <div class="container2">
+            <div class="background-image"></div>
+            <div class="text-block">
+                <h1>PROBAR DELICIAS LOCALES EN UN LUGAR DESCONOCIDO NUNCA HA SIDO TAN SENCILLO</h1>
+                <p>Los mejores lugares en una sola página</p>
+                <a href="restaurantes.xhtml" class="button">CONOCER</a>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="section2">
+            <h:graphicImage url="imagenes/chef.jpg" alt="Chef" />
+            <div class="text-content">
+                <h2>SABOR OPINIÓN</h2>
+                <p>Descubre los restaurantes</p>
+                <p class="highlight">CON LAS MEJORES RECOMENDACIONES</p>
+                <p>MÁS DE 60000 RESTAURANTES</p>
+            </div>
+        </div>
+
+        <br />
+
+        <div class="container">
+            <h2>Seleccionados para ti</h2>
+            <div class="nav-buttons">
+                <button>&lt;</button>
+                <button>&gt;</button>
+            </div>
+            <br />
+
+            <div class="card-container">
+                <div class="card">
+                    <h:graphicImage url="imagenes/d.carito.jpg" alt="D'Carito Restaurant Grill" />
+                    <div class="card-content">
+                        <span class="icon-heart">&#9829;</span> <!-- Aquí se cambia a la referencia numérica -->
+                        <h3>D'Carito Restaurant Grill</h3>
+                        <p class="rating">★★★★★</p>
+                        <p>270 opiniones</p>
+                        <p>Av. Santa 498, Nuevo Chimbote 02711</p>
+                        <a href="#" class="button">Ver más</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h:graphicImage url="imagenes/Porton Gaucho.png" alt="Portón Gaucho" />
+                    <div class="card-content">
+                        <span class="icon-heart">&#9829;</span> <!-- Aquí se cambia a la referencia numérica -->
+                        <h3>Portón Gaucho</h3>
+                        <p class="rating">★★★★★</p>
+                        <p>1.704 opiniones</p>
+                        <p>Jirón Huascarán 10, Nuevo Chimbote</p>
+                        <a href="#" class="button">Ver más</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <h:graphicImage url="imagenes/cholito.jpg" alt="Cholito Lindo" />
+                    <div class="card-content">
+                        <span class="icon-heart">&#9829;</span> <!-- Aquí se cambia a la referencia numérica -->
+                        <h3>Cholito Lindo</h3>
+                        <p class="rating">★★★★★</p>
+                        <p>463 opiniones</p>
+                        <p>Av Huascarán 362, mz k2 lt 4, Buenos Aires 02710</p>
+                        <a href="#" class="button">Ver más</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section3">
+            <h2>¿Cómo funciona?</h2>
+            <div class="how-it-works">
+                <div>
+                    <h:graphicImage url="imagenes/check.jpg" alt="La mejor opción" />
+                    <h3>La mejor opción</h3>
+                    <p>Los mejores restaurantes de cada ciudad a donde vayas</p>
+                </div>
+                <div>
+                    <h:graphicImage url="imagenes/Estrella.jpg" alt="Recomendaciones" />
+                    <h3>Recomendaciones</h3>
+                    <p>Usuarios recomiendan los restaurantes según su calidad y experiencia</p>
+                </div>
+                <div>
+                    <h:graphicImage url="imagenes/Restaurante2.jpg" alt="Registrar" />
+                    <h3>Registrar</h3>
+                    <p>Puedes registrar tu restaurante y tener más visibilidad en el mundo</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section3 cities">
+            <h2>Ciudades del Perú</h2>
+            <div class="city-container">
+                <div class="city">
+                    <h:graphicImage url="imagenes/CUSCO.jpg" alt="Cusco" />
+                    <h3>Cusco</h3>
+                </div>
+                <div class="city">
+                    <h:graphicImage url="imagenes/Lima.jpg" alt="Lima" />
+                    <h3>Lima</h3>
+                </div>
+                <div class="city">
+                    <h:graphicImage url="imagenes/Nuevo-Chimb.jpg" alt="Nuevo Chimbote" />
+                    <h3>Nuevo Chimbote</h3>
+                </div>
+                <div class="city">
+                    <h:graphicImage url="imagenes/Trujillo.jpg" alt="Trujillo" />
+                    <h3>Trujillo</h3>
+                </div>
+            </div>
+        </div>
+    </h:body>
 </html>
+

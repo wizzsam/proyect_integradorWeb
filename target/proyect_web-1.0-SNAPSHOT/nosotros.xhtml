@@ -8,6 +8,8 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Iniciar sesión</title>
+    <link rel="stylesheet" href="css/estilos.css" />
+    
     <link rel="stylesheet" href="css/navbar.css"/>
     <link rel="stylesheet" href="css/reset.css"/>
     <link rel="stylesheet" href="css/contacto.css"/>
@@ -22,11 +24,10 @@
         </div>
 
         <ul class="links">
-            <li><h:link class="a" outcome="#">Inicio</h:link></li>
-            <li><h:link class="a" outcome="#">Nosotros</h:link></li>
-            <li><h:link class="a" outcome="#">Reseñas</h:link></li>
-            <li><h:link class="a" outcome="#">Contacto</h:link></li>
-            <li><h:link class="a" outcome="#">Restaurante</h:link></li>
+               <li><h:link outcome="index.xhtml">Inicio</h:link></li>
+                <li><h:link outcome="nosotros.xhtml">Nosotros</h:link></li>
+                <li><h:link outcome="resena.xhtml">Reseñas</h:link></li>
+                <li><h:link outcome="contact.xhtml">Contacto</h:link></li>
         </ul>
 
         <h:link outcome="login.xhtml" styleClass="action_btn">Iniciar Sesion</h:link>
