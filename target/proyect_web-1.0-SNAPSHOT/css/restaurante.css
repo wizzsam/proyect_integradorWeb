@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-body{
+body {
     background: #FBF9F9;
 }
-.contenedor_inicio{
-display: flex;
-align-items: center;
-justify-content: center;
-flex-direction: column;
+
+.contenedor_inicio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
-.img_restaurante{
+
+.img_restaurante {
     width: 70%;
     height: 500px;
     position: relative;
@@ -18,8 +20,9 @@ flex-direction: column;
     position: relative;
     z-index: 1; /* Asegura que el pseudo-elemento esté por encima de la imagen */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), /* Sombra suave */
-    0 6px 20px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+                0 6px 20px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
 }
+
 .img_restaurante::after {
     content: '';
     position: absolute;
@@ -28,30 +31,33 @@ flex-direction: column;
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
-    border-radius: 10px; 
-    z-index: 2; 
-    pointer-events: none; 
+    border-radius: 10px;
+    z-index: 2;
+    pointer-events: none;
 }
-.buscador{
+
+.buscador {
     position: absolute;
     font-family: "Ubuntu", sans-serif;
     text-align: center;
-    z-index: 3; 
+    z-index: 3;
 }
 
-.texto_centrado{
+.texto_centrado {
     font-size: 45px;
     font-family: "Ubuntu", sans-serif;
     margin-bottom: 30px;
     font-weight: bold;
     color: white;
 }
-.input_buscar{
+
+.input_buscar {
     padding: 20px;
     width: 550px;
     border-radius: 50px;
 }
-.boton_buscar{
+
+.boton_buscar {
     background: white;
     color: black;
     padding: 20px;
@@ -59,39 +65,41 @@ flex-direction: column;
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
 .boton_buscar:hover {
     background-color: #e67e22;
 }
-.input_buscar::placeholder{
+
+.input_buscar::placeholder {
     font-family: "Ubuntu", sans-serif;
 }
-.contenedor_combo{
+
+.contenedor_combo {
     display: flex;
     justify-content: end;
     margin-right: 68px;
     gap: 5px;
-  
 }
 
-.combo{
+.combo {
     font-family: "Ubuntu", sans-serif;
     padding: 20px;
     border: 1px solid;
     border-radius: 5px;
     width: 300px;
     margin: 40px 0px;
-    
 }
+
 .contenedor_filtro {
-   
     background: #52171C;
     width: 25%;
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), /* Sombra suave */
-    0 6px 20px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+                0 6px 20px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
 }
-.contenedor_filtro h1,h2{
+
+.contenedor_filtro h1, h2 {
     color: rgb(213, 213, 213);
     font-family: "Ubuntu", sans-serif;
     padding: 10px;
@@ -110,52 +118,67 @@ label {
     color: white;
     font-family: "Ubuntu", sans-serif;
 }
-.conte{
+
+.conte {
     display: flex;
     justify-content: space-between;
     padding-bottom: 10px;
 }
-.contenedor_tarjeta{
-   width: 300px;
-   height: 300px;
-   border: 1px solid;
-   padding: 10px;
-   border-radius: 10px;
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), /* Sombra suave */
-   0 6px 20px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+
+.contenedor_tarjeta {
+    width: 300px;
+    height: 300px;
+    border: 1px solid;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), /* Sombra suave */
+                0 6px 20px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
 }
-.contenedor_nego{
+
+.contenedor_nego {
     display: flex;
     margin: 10px;
     gap: 100px;
     margin-left: 50px;
     margin-bottom: 10px;
 }
-.contenedor_target{
+
+.contenedor_target {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
 }
-.contenedor_tarjeta h1,p{
+
+.contenedor_tarjeta h1, p {
     font-family: "Ubuntu", sans-serif;
 }
-.contenedor_tarjeta button{
-    padding:0px 20px 0px 20px;
-    border: 1px solid ;
+
+.contenedor_tarjeta button {
+    padding: 0px 20px 0px 20px;
+    border: 1px solid;
     border-radius: 10px;
     color: white;
     background: #e67e22;
 }
-.paginacion{
+
+.paginacion {
     text-align: center;
     padding: 10px;
     margin: 10px;
 }
-.paginacion button{
+
+.paginacion button {
     border: 1px solid;
     padding: 10px 20px 10px 20px;
 }
-.contenedor_tarjeta img{
-    height: 210px;
-}
 
+.contenedor_tarjeta img {
+    height: 210px;
+    width: 100%;
+    border-radius: 10px;
+}
+#j_id_6:j_id_3t:tbody_element{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 52px;
+}

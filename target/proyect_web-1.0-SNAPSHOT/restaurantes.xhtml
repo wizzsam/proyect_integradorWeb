@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      lang="en">
+      lang="en"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
     <h:head>
         <meta charset="UTF-8"/>
@@ -64,134 +65,133 @@
                     </li>
                 </h:panelGroup>
             </div>
-  <div class="contenedor_inicio">
-            <h:graphicImage class="img_restaurante" value="imagenes/restaurante.jpg" alt="imagen_restaurante"/>
-            <div class="buscador">
-                <h1 class="texto_centrado">Buscar Restaurante</h1>
-                <h:inputText class="input_buscar"/>
-                <h:commandButton value="Buscar" type="button" styleClass="boton_buscar"/>
+            <div class="contenedor_inicio">
+                <h:graphicImage class="img_restaurante" value="imagenes/restaurante.jpg" alt="imagen_restaurante"/>
+                <div class="buscador">
+                    <h1 class="texto_centrado">Buscar Restaurante</h1>
+                    <h:inputText class="input_buscar"/>
+                    <h:commandButton value="Buscar" type="button" styleClass="boton_buscar"/>
+                </div>
             </div>
-        </div>
 
-        <div class="contenedor_combo">
-            <h:selectOneMenu class="combo">
-                <f:selectItem itemLabel="Argentina" itemValue="argentina"/>
-                <f:selectItem itemLabel="Bolivia" itemValue="bolivia"/>
-                <f:selectItem itemLabel="Brasil" itemValue="brasil"/>
-                <f:selectItem itemLabel="Chile" itemValue="chile"/>
-                <f:selectItem itemLabel="Colombia" itemValue="colombia"/>
-                <f:selectItem itemLabel="Costa Rica" itemValue="costa_rica"/>
-                <f:selectItem itemLabel="Cuba" itemValue="cuba"/>
-                <f:selectItem itemLabel="República Dominicana" itemValue="dominicana"/>
-                <f:selectItem itemLabel="Ecuador" itemValue="ecuador"/>
-                <f:selectItem itemLabel="El Salvador" itemValue="el_salvador"/>
-                <f:selectItem itemLabel="Guatemala" itemValue="guatemala"/>
-                <f:selectItem itemLabel="Honduras" itemValue="honduras"/>
-                <f:selectItem itemLabel="México" itemValue="mexico"/>
-                <f:selectItem itemLabel="Nicaragua" itemValue="nicaragua"/>
-                <f:selectItem itemLabel="Panamá" itemValue="panama"/>
-                <f:selectItem itemLabel="Paraguay" itemValue="paraguay"/>
-                <f:selectItem itemLabel="Perú" itemValue="peru"/>
-                <f:selectItem itemLabel="Puerto Rico" itemValue="puerto_rico"/>
-                <f:selectItem itemLabel="Uruguay" itemValue="uruguay"/>
-                <f:selectItem itemLabel="Venezuela" itemValue="venezuela"/>
-            </h:selectOneMenu>
             <div class="contenedor_combo">
                 <h:selectOneMenu class="combo">
-                    <f:selectItem itemLabel="Buenos Aires" itemValue="buenos_aires"/>
-                    <f:selectItem itemLabel="La Paz" itemValue="la_paz"/>
-                    <f:selectItem itemLabel="São Paulo" itemValue="sao_paulo"/>
-                    <f:selectItem itemLabel="Santiago" itemValue="santiago"/>
-                    <f:selectItem itemLabel="Bogotá" itemValue="bogota"/>
-                    <f:selectItem itemLabel="San José" itemValue="san_jose"/>
-                    <f:selectItem itemLabel="La Habana" itemValue="havana"/>
-                    <f:selectItem itemLabel="Santo Domingo" itemValue="santo_domingo"/>
-                    <f:selectItem itemLabel="Quito" itemValue="quito"/>
-                    <f:selectItem itemLabel="San Salvador" itemValue="san_salvador"/>
-                    <f:selectItem itemLabel="Ciudad de Guatemala" itemValue="guatemala_city"/>
-                    <f:selectItem itemLabel="Tegucigalpa" itemValue="tegucigalpa"/>
-                    <f:selectItem itemLabel="Ciudad de México" itemValue="mexico_city"/>
-                    <f:selectItem itemLabel="Managua" itemValue="managua"/>
-                    <f:selectItem itemLabel="Ciudad de Panamá" itemValue="panama_city"/>
-                    <f:selectItem itemLabel="Asunción" itemValue="asuncion"/>
-                    <f:selectItem itemLabel="Lima" itemValue="lima"/>
-                    <f:selectItem itemLabel="San Juan" itemValue="san_juan"/>
-                    <f:selectItem itemLabel="Montevideo" itemValue="montevideo"/>
-                    <f:selectItem itemLabel="Caracas" itemValue="caracas"/>
+                    <f:selectItem itemLabel="Argentina" itemValue="argentina"/>
+                    <f:selectItem itemLabel="Bolivia" itemValue="bolivia"/>
+                    <f:selectItem itemLabel="Brasil" itemValue="brasil"/>
+                    <f:selectItem itemLabel="Chile" itemValue="chile"/>
+                    <f:selectItem itemLabel="Colombia" itemValue="colombia"/>
+                    <f:selectItem itemLabel="Costa Rica" itemValue="costa_rica"/>
+                    <f:selectItem itemLabel="Cuba" itemValue="cuba"/>
+                    <f:selectItem itemLabel="República Dominicana" itemValue="dominicana"/>
+                    <f:selectItem itemLabel="Ecuador" itemValue="ecuador"/>
+                    <f:selectItem itemLabel="El Salvador" itemValue="el_salvador"/>
+                    <f:selectItem itemLabel="Guatemala" itemValue="guatemala"/>
+                    <f:selectItem itemLabel="Honduras" itemValue="honduras"/>
+                    <f:selectItem itemLabel="México" itemValue="mexico"/>
+                    <f:selectItem itemLabel="Nicaragua" itemValue="nicaragua"/>
+                    <f:selectItem itemLabel="Panamá" itemValue="panama"/>
+                    <f:selectItem itemLabel="Paraguay" itemValue="paraguay"/>
+                    <f:selectItem itemLabel="Perú" itemValue="peru"/>
+                    <f:selectItem itemLabel="Puerto Rico" itemValue="puerto_rico"/>
+                    <f:selectItem itemLabel="Uruguay" itemValue="uruguay"/>
+                    <f:selectItem itemLabel="Venezuela" itemValue="venezuela"/>
                 </h:selectOneMenu>
-            </div>
-        </div>
-        <div class="contenedor_nego">
-            <div class="contenedor_filtro">
-                <h1>FILTRAR</h1>
-                <h2>COMIDAS DEL DÍA</h2>
-                <div class="contenedor_check">
-                    <label>
-                        <h:selectBooleanCheckbox id="desayuno"/>
-                        Desayuno
-                    </label><br/>
-                    <label>
-                        <h:selectBooleanCheckbox id="almuerzo"/>
-                        Almuerzo
-                    </label><br/>
-                    <label>
-                        <h:selectBooleanCheckbox id="cena"/>
-                        Cena
-                    </label><br/>
-                </div>
-                <h2>TIPOS DE COMIDA</h2>
-                <div class="contenedor_check">
-                    <label>
-                        <h:selectBooleanCheckbox id="oriental"/>
-                        Oriental
-                    </label><br/>
-                    <label>
-                        <h:selectBooleanCheckbox id="nacional"/>
-                        Nacional
-                    </label><br/>
-                    <label>
-                        <h:selectBooleanCheckbox id="japonesa"/>
-                        Japonesa
-                    </label><br/>
-                    <label>
-                        <h:selectBooleanCheckbox id="vegana"/>
-                        Vegana
-                    </label><br/>
-                </div>
-                <h2>PRECIO</h2>
-                <div class="contenedor_check">
-                    <label>
-                        <h:selectBooleanCheckbox id="caro"/>
-                        Caro
-                    </label><br/>
-                    <label>
-                        <h:selectBooleanCheckbox id="economico"/>
-                        Económico
-                    </label><br/>
-                    <label>
-                        <h:selectBooleanCheckbox id="moderado"/>
-                        Moderado
-                    </label><br/>
-                </div>
-                <h2>TIPO DE ESTABLECIMIENTO</h2>
-                <div class="contenedor_check">
-                    <label>
-                        <h:selectBooleanCheckbox id="restaurante"/>
-                        Restaurante
-                    </label><br/>
-                    <label>
-                        <h:selectBooleanCheckbox id="huarique"/>
-                        Huarique
-                    </label><br/>
-                    <label>
-                        <h:selectBooleanCheckbox id="al_paso"/>
-                        Al paso
-                    </label><br/>
+                <div class="contenedor_combo">
+                    <h:selectOneMenu class="combo">
+                        <f:selectItem itemLabel="Buenos Aires" itemValue="buenos_aires"/>
+                        <f:selectItem itemLabel="La Paz" itemValue="la_paz"/>
+                        <f:selectItem itemLabel="São Paulo" itemValue="sao_paulo"/>
+                        <f:selectItem itemLabel="Santiago" itemValue="santiago"/>
+                        <f:selectItem itemLabel="Bogotá" itemValue="bogota"/>
+                        <f:selectItem itemLabel="San José" itemValue="san_jose"/>
+                        <f:selectItem itemLabel="La Habana" itemValue="havana"/>
+                        <f:selectItem itemLabel="Santo Domingo" itemValue="santo_domingo"/>
+                        <f:selectItem itemLabel="Quito" itemValue="quito"/>
+                        <f:selectItem itemLabel="San Salvador" itemValue="san_salvador"/>
+                        <f:selectItem itemLabel="Ciudad de Guatemala" itemValue="guatemala_city"/>
+                        <f:selectItem itemLabel="Tegucigalpa" itemValue="tegucigalpa"/>
+                        <f:selectItem itemLabel="Ciudad de México" itemValue="mexico_city"/>
+                        <f:selectItem itemLabel="Managua" itemValue="managua"/>
+                        <f:selectItem itemLabel="Ciudad de Panamá" itemValue="panama_city"/>
+                        <f:selectItem itemLabel="Asunción" itemValue="asuncion"/>
+                        <f:selectItem itemLabel="Lima" itemValue="lima"/>
+                        <f:selectItem itemLabel="San Juan" itemValue="san_juan"/>
+                        <f:selectItem itemLabel="Montevideo" itemValue="montevideo"/>
+                        <f:selectItem itemLabel="Caracas" itemValue="caracas"/>
+                    </h:selectOneMenu>
                 </div>
             </div>
-            <div class="contenedor_target" id="contenedor_target">
-                <h:dataTable value="#{restauranteBean.restaurantes}" var="restaurante" styleClass="table">
-                    <h:column>
+            <div class="contenedor_nego">
+                <div class="contenedor_filtro">
+                    <h1>FILTRAR</h1>
+                    <h2>COMIDAS DEL DÍA</h2>
+                    <div class="contenedor_check">
+                        <label>
+                            <h:selectBooleanCheckbox id="desayuno"/>
+                            Desayuno
+                        </label><br/>
+                        <label>
+                            <h:selectBooleanCheckbox id="almuerzo"/>
+                            Almuerzo
+                        </label><br/>
+                        <label>
+                            <h:selectBooleanCheckbox id="cena"/>
+                            Cena
+                        </label><br/>
+                    </div>
+                    <h2>TIPOS DE COMIDA</h2>
+                    <div class="contenedor_check">
+                        <label>
+                            <h:selectBooleanCheckbox id="oriental"/>
+                            Oriental
+                        </label><br/>
+                        <label>
+                            <h:selectBooleanCheckbox id="nacional"/>
+                            Nacional
+                        </label><br/>
+                        <label>
+                            <h:selectBooleanCheckbox id="japonesa"/>
+                            Japonesa
+                        </label><br/>
+                        <label>
+                            <h:selectBooleanCheckbox id="vegana"/>
+                            Vegana
+                        </label><br/>
+                    </div>
+                    <h2>PRECIO</h2>
+                    <div class="contenedor_check">
+                        <label>
+                            <h:selectBooleanCheckbox id="caro"/>
+                            Caro
+                        </label><br/>
+                        <label>
+                            <h:selectBooleanCheckbox id="economico"/>
+                            Económico
+                        </label><br/>
+                        <label>
+                            <h:selectBooleanCheckbox id="moderado"/>
+                            Moderado
+                        </label><br/>
+                    </div>
+                    <h2>TIPO DE ESTABLECIMIENTO</h2>
+                    <div class="contenedor_check">
+                        <label>
+                            <h:selectBooleanCheckbox id="restaurante"/>
+                            Restaurante
+                        </label><br/>
+                        <label>
+                            <h:selectBooleanCheckbox id="huarique"/>
+                            Huarique
+                        </label><br/>
+                        <label>
+                            <h:selectBooleanCheckbox id="al_paso"/>
+                            Al paso
+                        </label><br/>
+                    </div>
+                </div>
+                <div class="contenedor_target" id="contenedor_target">
+                    <ui:repeat value="#{restauranteBean.restaurantes}" var="restaurante">
                         <div class="contenedor_tarjeta">
                             <h:graphicImage value="#{restaurante.imagen1}" alt="Imagen"/>
                             <div class="conte">
@@ -204,11 +204,10 @@
                             </div>
                             <h1>#{restaurante.direccionRestaurante}</h1>
                         </div>
-                    </h:column>
-                </h:dataTable>
+                    </ui:repeat>
+                </div>
             </div>
-        </div>
-    </h:form>
+        </h:form>
         <div class="paginacion">
             <button id="prevBtn" onclick="prevPage()">Anterior</button>
             <button id="nextBtn" onclick="nextPage()">Siguiente</button>
