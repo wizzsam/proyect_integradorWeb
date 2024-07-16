@@ -23,10 +23,11 @@ public class Restaurante {
     private String imagen2;
     private String imagen3;
     private String pais;
-    public Restaurante() {
-    }
+    private String ciudad; // Nuevo campo
 
-    public Restaurante(int id, String nombreRestaurante1, String nombreRestaurante2, String tipoComida1, String comidaDia, String tipoEstablecimiento, String direccionRestaurante, String telefono, String paginaWeb, String precio, String imagen1, String imagen2, String imagen3, String pais) {
+    public Restaurante() {}
+
+    public Restaurante(int id, String nombreRestaurante1, String nombreRestaurante2, String tipoComida1, String comidaDia, String tipoEstablecimiento, String direccionRestaurante, String telefono, String paginaWeb, String precio, String imagen1, String imagen2, String imagen3, String pais, String ciudad) {
         this.id = id;
         this.nombreRestaurante1 = nombreRestaurante1;
         this.nombreRestaurante2 = nombreRestaurante2;
@@ -40,7 +41,8 @@ public class Restaurante {
         this.imagen1 = imagen1;
         this.imagen2 = imagen2;
         this.imagen3 = imagen3;
-        this.pais=pais;
+        this.pais = pais;
+        this.ciudad = ciudad;
     }
 
     public int getId() {
@@ -154,6 +156,11 @@ public class Restaurante {
     public void setPais(String pais) {
         this.pais = pais;
     }
+    public String getCiudad() {
+        return ciudad;
+    }
 
-    
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
 }

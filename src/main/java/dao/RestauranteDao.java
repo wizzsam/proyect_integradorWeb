@@ -16,7 +16,7 @@ import util.DBConnection;
 public class RestauranteDao {
 
     public void save(Restaurante restaurante) {
-        String query = "INSERT INTO restaurante (nombre_restaurante1, nombre_restaurante2, tipo_comida1, comida_dia, tipo_establecimiento, direccion_restaurante, telefono, pagina_web, precio, imagen1, imagen2, imagen3) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO restaurante (nombre_restaurante1, nombre_restaurante2, tipo_comida1, comida_dia, tipo_establecimiento, direccion_restaurante, telefono, pagina_web, precio, imagen1, imagen2, imagen3, pais, ciudad) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -32,6 +32,8 @@ public class RestauranteDao {
             preparedStatement.setString(10, restaurante.getImagen1());
             preparedStatement.setString(11, restaurante.getImagen2());
             preparedStatement.setString(12, restaurante.getImagen3());
+            preparedStatement.setString(13, restaurante.getPais());
+            preparedStatement.setString(14, restaurante.getCiudad());
 
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -63,6 +65,7 @@ public class RestauranteDao {
                 restaurante.setImagen2(resultSet.getString("imagen2"));
                 restaurante.setImagen3(resultSet.getString("imagen3"));
                 restaurante.setPais(resultSet.getString("pais"));
+                restaurante.setCiudad(resultSet.getString("ciudad"));
                 restaurantes.add(restaurante);
             }
 

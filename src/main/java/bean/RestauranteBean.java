@@ -4,18 +4,18 @@
  */
 package bean;
 
-
-
 import model.Restaurante;
 import dao.RestauranteDao;
 import jakarta.annotation.PostConstruct;
-import jakarta.enterprise.context.RequestScoped;
+import jakarta.enterprise.context.SessionScoped;
 import jakarta.inject.Named;
+import java.io.Serializable;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Named
-@RequestScoped
-public class RestauranteBean {
+@SessionScoped
+public class RestauranteBean implements Serializable {
 
     private String nombreRestaurante1;
     private String nombreRestaurante2;
@@ -30,13 +30,52 @@ public class RestauranteBean {
     private String imagen2;
     private String imagen3;
     private String pais;
+    private String ciudad; // Nuevo campo
+    private String filtroPais;
+    private String filtroCiudad;
+    private boolean filtroDesayuno;
+    private boolean filtroAlmuerzo;
+    private boolean filtroCena;
+    private boolean filtroOriental;
+    private boolean filtroNacional;
+    private boolean filtroJaponesa;
+    private boolean filtroVegana;
+    private boolean filtroCaro;
+    private boolean filtroEconomico;
+    private boolean filtroModerado;
+    private boolean filtroRestaurante;
+    private boolean filtroHuarique;
+    private boolean filtroAlPaso;
+
     private List<Restaurante> restaurantes;
+    private List<Restaurante> restaurantesFiltrados;
 
     private RestauranteDao restauranteDao = new RestauranteDao();
 
     @PostConstruct
     public void init() {
         restaurantes = restauranteDao.findAll();
+        restaurantesFiltrados = restaurantes;
+    }
+
+    public void filtrar() {
+        restaurantesFiltrados = restaurantes.stream()
+                .filter(r -> (filtroPais == null || filtroPais.isEmpty() || r.getPais().equalsIgnoreCase(filtroPais)) &&
+                             (filtroCiudad == null || filtroCiudad.isEmpty() || r.getCiudad().equalsIgnoreCase(filtroCiudad)) &&
+                             (!filtroDesayuno || r.getComidaDia().equalsIgnoreCase("Desayuno")) &&
+                             (!filtroAlmuerzo || r.getComidaDia().equalsIgnoreCase("Almuerzo")) &&
+                             (!filtroCena || r.getComidaDia().equalsIgnoreCase("Cena")) &&
+                             (!filtroOriental || r.getTipoComida1().equalsIgnoreCase("Oriental")) &&
+                             (!filtroNacional || r.getTipoComida1().equalsIgnoreCase("Nacional")) &&
+                             (!filtroJaponesa || r.getTipoComida1().equalsIgnoreCase("Japonesa")) &&
+                             (!filtroVegana || r.getTipoComida1().equalsIgnoreCase("Vegana")) &&
+                             (!filtroCaro || r.getPrecio().equalsIgnoreCase("Caro")) &&
+                             (!filtroEconomico || r.getPrecio().equalsIgnoreCase("Económico")) &&
+                             (!filtroModerado || r.getPrecio().equalsIgnoreCase("Moderado")) &&
+                             (!filtroRestaurante || r.getTipoEstablecimiento().equalsIgnoreCase("Restaurante")) &&
+                             (!filtroHuarique || r.getTipoEstablecimiento().equalsIgnoreCase("Huarique")) &&
+                             (!filtroAlPaso || r.getTipoEstablecimiento().equalsIgnoreCase("Al paso")))
+                .collect(Collectors.toList());
     }
 
     public String registrar() {
@@ -54,13 +93,191 @@ public class RestauranteBean {
         restaurante.setImagen2(imagen2);
         restaurante.setImagen3(imagen3);
         restaurante.setPais(pais);
+        restaurante.setCiudad(ciudad);
 
         restauranteDao.save(restaurante);
+        // Actualiza la lista de restaurantes
+        restaurantes = restauranteDao.findAll();
+        filtrar();
+
+        // Limpiar los campos del formulario
+        limpiarFormulario();
+
         return "registroExitoso"; // Redirige a una página de confirmación
     }
 
+    private void limpiarFormulario() {
+        nombreRestaurante1 = null;
+        nombreRestaurante2 = null;
+        tipoComida1 = null;
+        comidaDia = null;
+        tipoEstablecimiento = null;
+        direccionRestaurante = null;
+        telefono = null;
+        paginaWeb = null;
+        precio = null;
+        imagen1 = null;
+        imagen2 = null;
+        imagen3 = null;
+        pais = null;
+        ciudad = null;
+    }
+
     public List<Restaurante> getRestaurantes() {
-        return restaurantes;
+        return restaurantesFiltrados;
+    }
+
+    // Getters y setters
+
+    public String getFiltroPais() {
+        return filtroPais;
+    }
+
+    public void setFiltroPais(String filtroPais) {
+        this.filtroPais = filtroPais;
+        filtrar();
+    }
+
+    public String getFiltroCiudad() {
+        return filtroCiudad;
+    }
+
+    public void setFiltroCiudad(String filtroCiudad) {
+        this.filtroCiudad = filtroCiudad;
+        filtrar();
+    }
+
+    public boolean isFiltroDesayuno() {
+        return filtroDesayuno;
+    }
+
+    public void setFiltroDesayuno(boolean filtroDesayuno) {
+        this.filtroDesayuno = filtroDesayuno;
+        filtrar();
+    }
+
+    public boolean isFiltroAlmuerzo() {
+        return filtroAlmuerzo;
+    }
+
+    public void setFiltroAlmuerzo(boolean filtroAlmuerzo) {
+        this.filtroAlmuerzo = filtroAlmuerzo;
+        filtrar();
+    }
+
+    public boolean isFiltroCena() {
+        return filtroCena;
+    }
+
+    public void setFiltroCena(boolean filtroCena) {
+        this.filtroCena = filtroCena;
+        filtrar();
+    }
+
+    public boolean isFiltroOriental() {
+        return filtroOriental;
+    }
+
+    public void setFiltroOriental(boolean filtroOriental) {
+        this.filtroOriental = filtroOriental;
+        filtrar();
+    }
+
+    public boolean isFiltroNacional() {
+        return filtroNacional;
+    }
+
+    public void setFiltroNacional(boolean filtroNacional) {
+        this.filtroNacional = filtroNacional;
+        filtrar();
+    }
+
+    public boolean isFiltroJaponesa() {
+        return filtroJaponesa;
+    }
+
+    public void setFiltroJaponesa(boolean filtroJaponesa) {
+        this.filtroJaponesa = filtroJaponesa;
+        filtrar();
+    }
+
+    public boolean isFiltroVegana() {
+        return filtroVegana;
+    }
+
+    public void setFiltroVegana(boolean filtroVegana) {
+        this.filtroVegana = filtroVegana;
+        filtrar();
+    }
+
+    public boolean isFiltroCaro() {
+        return filtroCaro;
+    }
+
+    public void setFiltroCaro(boolean filtroCaro) {
+        this.filtroCaro = filtroCaro;
+        filtrar();
+    }
+
+    public boolean isFiltroEconomico() {
+        return filtroEconomico;
+    }
+
+    public void setFiltroEconomico(boolean filtroEconomico) {
+        this.filtroEconomico = filtroEconomico;
+        filtrar();
+    }
+
+    public boolean isFiltroModerado() {
+        return filtroModerado;
+    }
+
+    public void setFiltroModerado(boolean filtroModerado) {
+        this.filtroModerado = filtroModerado;
+        filtrar();
+    }
+
+    public boolean isFiltroRestaurante() {
+        return filtroRestaurante;
+    }
+
+    public void setFiltroRestaurante(boolean filtroRestaurante) {
+        this.filtroRestaurante = filtroRestaurante;
+        filtrar();
+    }
+
+    public boolean isFiltroHuarique() {
+        return filtroHuarique;
+    }
+
+    public void setFiltroHuarique(boolean filtroHuarique) {
+        this.filtroHuarique = filtroHuarique;
+        filtrar();
+    }
+
+    public boolean isFiltroAlPaso() {
+        return filtroAlPaso;
+    }
+
+    public void setFiltroAlPaso(boolean filtroAlPaso) {
+        this.filtroAlPaso = filtroAlPaso;
+        filtrar();
+    }
+
+    public List<Restaurante> getRestaurantesFiltrados() {
+        return restaurantesFiltrados;
+    }
+
+    public void setRestaurantesFiltrados(List<Restaurante> restaurantesFiltrados) {
+        this.restaurantesFiltrados = restaurantesFiltrados;
+    }
+
+    public RestauranteDao getRestauranteDao() {
+        return restauranteDao;
+    }
+
+    public void setRestauranteDao(RestauranteDao restauranteDao) {
+        this.restauranteDao = restauranteDao;
     }
 
     public String getNombreRestaurante1() {
@@ -167,13 +384,12 @@ public class RestauranteBean {
         this.pais = pais;
     }
 
-    
-    public RestauranteDao getRestauranteDao() {
-        return restauranteDao;
+    public String getCiudad() {
+        return ciudad;
     }
 
-    public void setRestauranteDao(RestauranteDao restauranteDao) {
-        this.restauranteDao = restauranteDao;
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
     }
 
     

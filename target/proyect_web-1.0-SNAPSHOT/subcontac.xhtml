@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="css/subcontac.css"/>
     </h:head>
 
-     <h:body>
+    <h:body>
         <div class="navbar">
             <div class="logo">
                 <h:link outcome="index.xhtml">
@@ -26,7 +26,7 @@
                 <li><h:link class="a" outcome="nosotros.xhtml">Nosotros</h:link></li>
                 <li><h:link class="a" outcome="subcontac.xhtml">Contacto</h:link></li>
                 <li><h:link class="a" outcome="restaurantes.xhtml">Restaurante</h:link></li>
-                
+
                 <h:panelGroup rendered="#{loginBean.loggedIn}">
                     <li><h:outputText value="Hola, #{loginBean.sessionUsername}" styleClass="a"/></li>
                 </h:panelGroup>
@@ -75,11 +75,56 @@
                     <div class="form-group">
                         <h:outputLabel for="pais" value="País" styleClass="label"/>
                         <h:selectOneMenu id="pais" value="#{restauranteBean.pais}" styleClass="select-menu">
-                            <f:selectItem itemLabel="Perú" itemValue="Perú" />
-                            <f:selectItem itemLabel="Argentina" itemValue="Argentina" />
-                            <f:selectItem itemLabel="Colombia" itemValue="Colombia" />
-                            <f:selectItem itemLabel="Venezuela" itemValue="Venezuela" />
-                            <f:selectItem itemLabel="Chile" itemValue="Chile" />
+                            <f:selectItem itemLabel="" itemValue="" />
+                            <f:selectItem itemLabel="Argentina" itemValue="argentina"/>
+                            <f:selectItem itemLabel="Bolivia" itemValue="bolivia"/>
+                            <f:selectItem itemLabel="Brasil" itemValue="brasil"/>
+                            <f:selectItem itemLabel="Chile" itemValue="chile"/>
+                            <f:selectItem itemLabel="Colombia" itemValue="colombia"/>
+                            <f:selectItem itemLabel="Costa Rica" itemValue="costa_rica"/>
+                            <f:selectItem itemLabel="Cuba" itemValue="cuba"/>
+                            <f:selectItem itemLabel="República Dominicana" itemValue="dominicana"/>
+                            <f:selectItem itemLabel="Ecuador" itemValue="ecuador"/>
+                            <f:selectItem itemLabel="El Salvador" itemValue="el_salvador"/>
+                            <f:selectItem itemLabel="Guatemala" itemValue="guatemala"/>
+                            <f:selectItem itemLabel="Honduras" itemValue="honduras"/>
+                            <f:selectItem itemLabel="México" itemValue="mexico"/>
+                            <f:selectItem itemLabel="Nicaragua" itemValue="nicaragua"/>
+                            <f:selectItem itemLabel="Panamá" itemValue="panama"/>
+                            <f:selectItem itemLabel="Paraguay" itemValue="paraguay"/>
+                            <f:selectItem itemLabel="Perú" itemValue="peru"/>
+                            <f:selectItem itemLabel="Puerto Rico" itemValue="puerto_rico"/>
+                            <f:selectItem itemLabel="Uruguay" itemValue="uruguay"/>
+                            <f:selectItem itemLabel="Venezuela" itemValue="venezuela"/>
+                            <f:selectItem itemLabel="Japon" itemValue="japon"/>
+                        </h:selectOneMenu>
+                    </div>
+                    <div class="form-group">
+                        <h:outputLabel for="ciudad" value="Ciudad" styleClass="label"/>
+                        <h:selectOneMenu id="ciudad" value="#{restauranteBean.ciudad}" styleClass="select-menu">
+                            <f:selectItem itemLabel="" itemValue=""/>
+                            <f:selectItem itemLabel="Buenos Aires" itemValue="buenos_aires"/>
+                            <f:selectItem itemLabel="La Paz" itemValue="la_paz"/>
+                            <f:selectItem itemLabel="São Paulo" itemValue="sao_paulo"/>
+                            <f:selectItem itemLabel="Santiago" itemValue="santiago"/>
+                            <f:selectItem itemLabel="Bogotá" itemValue="bogota"/>
+                            <f:selectItem itemLabel="San José" itemValue="san_jose"/>
+                            <f:selectItem itemLabel="La Habana" itemValue="havana"/>
+                            <f:selectItem itemLabel="Santo Domingo" itemValue="santo_domingo"/>
+                            <f:selectItem itemLabel="Quito" itemValue="quito"/>
+                            <f:selectItem itemLabel="San Salvador" itemValue="san_salvador"/>
+                            <f:selectItem itemLabel="Ciudad de Guatemala" itemValue="guatemala_city"/>
+                            <f:selectItem itemLabel="Tegucigalpa" itemValue="tegucigalpa"/>
+                            <f:selectItem itemLabel="Ciudad de México" itemValue="mexico_city"/>
+                            <f:selectItem itemLabel="Managua" itemValue="managua"/>
+                            <f:selectItem itemLabel="Ciudad de Panamá" itemValue="panama_city"/>
+                            <f:selectItem itemLabel="Asunción" itemValue="asuncion"/>
+                            <f:selectItem itemLabel="Lima" itemValue="lima"/>
+                            <f:selectItem itemLabel="San Juan" itemValue="san_juan"/>
+                            <f:selectItem itemLabel="Montevideo" itemValue="montevideo"/>
+                            <f:selectItem itemLabel="Caracas" itemValue="caracas"/>
+                            <f:selectItem itemLabel="Nuevo Chimbote" itemValue="Nuevo Chimbote"/>
+                            <f:selectItem itemLabel="Tokyo" itemValue="Tokyo"/>
                         </h:selectOneMenu>
                     </div>
                     <div class="form-group">
@@ -96,6 +141,7 @@
                             <f:selectItem itemLabel="Nacional" itemValue="Nacional" />
                             <f:selectItem itemLabel="Japonesa" itemValue="Japonesa" />
                             <f:selectItem itemLabel="Vegana" itemValue="Vegana" />
+                            <f:selectItem itemLabel="Argentina" itemValue="Argentina" />
                         </h:selectOneMenu>
                     </div>
                     <div class="form-group">
@@ -126,7 +172,7 @@
                 <div class="form-row">
                     <div class="form-group1">
                         <h:outputLabel for="telefono" value="Teléfono" styleClass="label"/>
-                        <h:inputText id="telefono" value="#{restauranteBean.telefono}" styleClass="input-text"/>
+                        <h:inputText id="telefono" value="#{restauranteBean.telefono}" styleClass="input-text" />
                     </div>
                     <div class="form-group1">
                         <h:outputLabel for="pagina_web" value="Página web" styleClass="label"/>

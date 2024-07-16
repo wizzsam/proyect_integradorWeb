@@ -172,7 +172,16 @@ label {
     background: #e67e22;
 }
 
-
+.botonir{
+    padding: 5px 20px 5px 20px;
+    background-color: #f39c12;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.botonir:hover{
+    background-color:#d35400; 
+}
 .link-pag{
         display: inline-block;
     padding: 15px 20px;

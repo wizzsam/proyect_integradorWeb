@@ -75,7 +75,8 @@
             </div>
 
             <div class="contenedor_combo">
-                <h:selectOneMenu class="combo">
+                <h:selectOneMenu class="combo" value="#{restauranteBean.filtroPais}" onchange="this.form.submit()">
+                    <f:selectItem itemLabel="" itemValue=""/>
                     <f:selectItem itemLabel="Argentina" itemValue="argentina"/>
                     <f:selectItem itemLabel="Bolivia" itemValue="bolivia"/>
                     <f:selectItem itemLabel="Brasil" itemValue="brasil"/>
@@ -96,31 +97,9 @@
                     <f:selectItem itemLabel="Puerto Rico" itemValue="puerto_rico"/>
                     <f:selectItem itemLabel="Uruguay" itemValue="uruguay"/>
                     <f:selectItem itemLabel="Venezuela" itemValue="venezuela"/>
+                    <f:selectItem itemLabel="Japon" itemValue="japon"/>
                 </h:selectOneMenu>
-                <div class="contenedor_combo">
-                    <h:selectOneMenu class="combo">
-                        <f:selectItem itemLabel="Buenos Aires" itemValue="buenos_aires"/>
-                        <f:selectItem itemLabel="La Paz" itemValue="la_paz"/>
-                        <f:selectItem itemLabel="São Paulo" itemValue="sao_paulo"/>
-                        <f:selectItem itemLabel="Santiago" itemValue="santiago"/>
-                        <f:selectItem itemLabel="Bogotá" itemValue="bogota"/>
-                        <f:selectItem itemLabel="San José" itemValue="san_jose"/>
-                        <f:selectItem itemLabel="La Habana" itemValue="havana"/>
-                        <f:selectItem itemLabel="Santo Domingo" itemValue="santo_domingo"/>
-                        <f:selectItem itemLabel="Quito" itemValue="quito"/>
-                        <f:selectItem itemLabel="San Salvador" itemValue="san_salvador"/>
-                        <f:selectItem itemLabel="Ciudad de Guatemala" itemValue="guatemala_city"/>
-                        <f:selectItem itemLabel="Tegucigalpa" itemValue="tegucigalpa"/>
-                        <f:selectItem itemLabel="Ciudad de México" itemValue="mexico_city"/>
-                        <f:selectItem itemLabel="Managua" itemValue="managua"/>
-                        <f:selectItem itemLabel="Ciudad de Panamá" itemValue="panama_city"/>
-                        <f:selectItem itemLabel="Asunción" itemValue="asuncion"/>
-                        <f:selectItem itemLabel="Lima" itemValue="lima"/>
-                        <f:selectItem itemLabel="San Juan" itemValue="san_juan"/>
-                        <f:selectItem itemLabel="Montevideo" itemValue="montevideo"/>
-                        <f:selectItem itemLabel="Caracas" itemValue="caracas"/>
-                    </h:selectOneMenu>
-                </div>
+
             </div>
             <div class="contenedor_nego">
                 <div class="contenedor_filtro">
@@ -128,64 +107,64 @@
                     <h2>COMIDAS DEL DÍA</h2>
                     <div class="contenedor_check">
                         <label>
-                            <h:selectBooleanCheckbox id="desayuno"/>
+                            <h:selectBooleanCheckbox value="#{restauranteBean.filtroDesayuno}" onchange="submit()"/>
                             Desayuno
                         </label><br/>
                         <label>
-                            <h:selectBooleanCheckbox id="almuerzo"/>
+                            <h:selectBooleanCheckbox value="#{restauranteBean.filtroAlmuerzo}" onchange="submit()"/>
                             Almuerzo
                         </label><br/>
                         <label>
-                            <h:selectBooleanCheckbox id="cena"/>
+                            <h:selectBooleanCheckbox value="#{restauranteBean.filtroCena}" onchange="submit()"/>
                             Cena
                         </label><br/>
                     </div>
                     <h2>TIPOS DE COMIDA</h2>
                     <div class="contenedor_check">
                         <label>
-                            <h:selectBooleanCheckbox id="oriental"/>
+                            <h:selectBooleanCheckbox value="#{restauranteBean.filtroOriental}" onchange="submit()"/>
                             Oriental
                         </label><br/>
                         <label>
-                            <h:selectBooleanCheckbox id="nacional"/>
+                            <h:selectBooleanCheckbox value="#{restauranteBean.filtroNacional}" onchange="submit()"/>
                             Nacional
                         </label><br/>
                         <label>
-                            <h:selectBooleanCheckbox id="japonesa"/>
+                            <h:selectBooleanCheckbox value="#{restauranteBean.filtroJaponesa}" onchange="submit()"/>
                             Japonesa
                         </label><br/>
                         <label>
-                            <h:selectBooleanCheckbox id="vegana"/>
+                            <h:selectBooleanCheckbox value="#{restauranteBean.filtroVegana}" onchange="submit()"/>
                             Vegana
                         </label><br/>
                     </div>
                     <h2>PRECIO</h2>
                     <div class="contenedor_check">
                         <label>
-                            <h:selectBooleanCheckbox id="caro"/>
+                            <h:selectBooleanCheckbox value="#{restauranteBean.filtroCaro}" onchange="submit()"/>
                             Caro
                         </label><br/>
                         <label>
-                            <h:selectBooleanCheckbox id="economico"/>
+                            <h:selectBooleanCheckbox value="#{restauranteBean.filtroEconomico}" onchange="submit()"/>
                             Económico
                         </label><br/>
                         <label>
-                            <h:selectBooleanCheckbox id="moderado"/>
+                            <h:selectBooleanCheckbox value="#{restauranteBean.filtroModerado}" onchange="submit()"/>
                             Moderado
                         </label><br/>
                     </div>
                     <h2>TIPO DE ESTABLECIMIENTO</h2>
                     <div class="contenedor_check">
                         <label>
-                            <h:selectBooleanCheckbox id="restaurante"/>
+                            <h:selectBooleanCheckbox value="#{restauranteBean.filtroRestaurante}" onchange="submit()"/>
                             Restaurante
                         </label><br/>
                         <label>
-                            <h:selectBooleanCheckbox id="huarique"/>
+                            <h:selectBooleanCheckbox value="#{restauranteBean.filtroHuarique}" onchange="submit()"/>
                             Huarique
                         </label><br/>
                         <label>
-                            <h:selectBooleanCheckbox id="al_paso"/>
+                            <h:selectBooleanCheckbox value="#{restauranteBean.filtroAlPaso}" onchange="submit()"/>
                             Al paso
                         </label><br/>
                     </div>
@@ -196,15 +175,13 @@
                             <h:graphicImage value="#{restaurante.imagen1}" alt="Imagen"/>
                             <div class="conte">
                                 <h1>#{restaurante.nombreRestaurante1}</h1>
-                                
-                                <h:commandButton styleClass="link-pag" value="Ir" action="someAction"/>
+                                <h:commandButton class="botonir" value="Ir" action="someAction"/>
                             </div>
                             <div class="conte">
                                 <h1>★★★★★</h1>
                                 <p>1500 opiniones</p>
                             </div>
-                            <h1>#{restaurante.direccionRestaurante}</h1>
-                         
+                            <h1>#{restaurante.pais},#{restaurante.ciudad}</h1>
                         </div>
                     </ui:repeat>
                 </div>
