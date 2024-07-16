@@ -62,6 +62,7 @@ public class RestauranteDao {
                 restaurante.setImagen1(resultSet.getString("imagen1"));
                 restaurante.setImagen2(resultSet.getString("imagen2"));
                 restaurante.setImagen3(resultSet.getString("imagen3"));
+                restaurante.setPais(resultSet.getString("pais"));
                 restaurantes.add(restaurante);
             }
 

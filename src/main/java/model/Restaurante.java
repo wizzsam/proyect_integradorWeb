@@ -22,11 +22,11 @@ public class Restaurante {
     private String imagen1;
     private String imagen2;
     private String imagen3;
-
+    private String pais;
     public Restaurante() {
     }
 
-    public Restaurante(int id, String nombreRestaurante1, String nombreRestaurante2, String tipoComida1, String comidaDia, String tipoEstablecimiento, String direccionRestaurante, String telefono, String paginaWeb, String precio, String imagen1, String imagen2, String imagen3) {
+    public Restaurante(int id, String nombreRestaurante1, String nombreRestaurante2, String tipoComida1, String comidaDia, String tipoEstablecimiento, String direccionRestaurante, String telefono, String paginaWeb, String precio, String imagen1, String imagen2, String imagen3, String pais) {
         this.id = id;
         this.nombreRestaurante1 = nombreRestaurante1;
         this.nombreRestaurante2 = nombreRestaurante2;
@@ -40,6 +40,7 @@ public class Restaurante {
         this.imagen1 = imagen1;
         this.imagen2 = imagen2;
         this.imagen3 = imagen3;
+        this.pais=pais;
     }
 
     public int getId() {
@@ -144,6 +145,14 @@ public class Restaurante {
 
     public void setImagen3(String imagen3) {
         this.imagen3 = imagen3;
+    }
+
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
     }
 
     

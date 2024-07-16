@@ -29,6 +29,7 @@ public class RestauranteBean {
     private String imagen1;
     private String imagen2;
     private String imagen3;
+    private String pais;
     private List<Restaurante> restaurantes;
 
     private RestauranteDao restauranteDao = new RestauranteDao();
@@ -52,6 +53,7 @@ public class RestauranteBean {
         restaurante.setImagen1(imagen1);
         restaurante.setImagen2(imagen2);
         restaurante.setImagen3(imagen3);
+        restaurante.setPais(pais);
 
         restauranteDao.save(restaurante);
         return "registroExitoso"; // Redirige a una página de confirmación
@@ -157,6 +159,15 @@ public class RestauranteBean {
         this.imagen3 = imagen3;
     }
 
+    public String getPais() {
+        return pais;
+    }
+
+    public void setPais(String pais) {
+        this.pais = pais;
+    }
+
+    
     public RestauranteDao getRestauranteDao() {
         return restauranteDao;
     }
