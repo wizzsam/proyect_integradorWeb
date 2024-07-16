@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      lang="en">
+
+    <h:head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Restaurante</title>
+        <link rel="stylesheet" href="css/navbar.css"/>
+        <link rel="stylesheet" href="css/estilos.css" />
+        <link rel="stylesheet" href="css/reset.css"/>
+        <link rel="stylesheet" href="css/contacto.css"/>
+        <link rel="stylesheet" href="css/restaurante.css"/>
+         <link rel="stylesheet" href="css/style.css" />
+    </h:head>
+    <body>
+           <div class="navbar">
+            <div class="logo">
+                <h:link outcome="index.xhtml">
+                    <h:graphicImage url="imagenes/Logo_SaborOpinion.png" alt="logo" height="150px" width="150px" />
+                </h:link>
+            </div>
+            <ul class="links">
+                <li><h:link class="a" outcome="index.xhtml">Inicio</h:link></li>
+                <li><h:link class="a" outcome="nosotros.xhtml">Nosotros</h:link></li>
+                <li><h:link class="a" outcome="subcontac.xhtml">Contacto</h:link></li>
+                <li><h:link class="a" outcome="restaurantes.xhtml">Restaurante</h:link></li>
+                
+                <h:panelGroup rendered="#{loginBean.loggedIn}">
+                    <li><h:outputText value="Hola, #{loginBean.sessionUsername}" styleClass="a"/></li>
+                </h:panelGroup>
+            </ul>
+
+            <h:panelGroup rendered="#{!loginBean.loggedIn}">
+                <h:link outcome="login.xhtml" styleClass="action_btn">Iniciar Sesion</h:link>
+            </h:panelGroup>
+            <h:panelGroup rendered="#{loginBean.loggedIn}">
+                <h:form>
+                    <h:commandButton value="Cerrar Sesión" action="#{loginBean.logout}" styleClass="action_btn"/>
+                </h:form>
+            </h:panelGroup>
+        </div>
+
+        <div class="dropdown_menu">
+            <li><h:link class="a" outcome="index.xhtml">Inicio</h:link></li>
+            <li><h:link class="a" outcome="nosotros.xhtml">Nosotros</h:link></li>
+            <li><h:link class="a" outcome="subcontac.xhtml">Contacto</h:link></li>
+            <li><h:link class="a" outcome="restaurantes.xhtml">Restaurante</h:link></li>
+
+            <h:panelGroup rendered="#{loginBean.loggedIn}">
+                <li><h:outputText value="Hola, #{loginBean.sessionUsername}" styleClass="a"/></li>
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{!loginBean.loggedIn}">
+                <li><h:link class="a" outcome="login.xhtml" styleClass="action_btn">Iniciar Sesion</h:link></li>
+            </h:panelGroup>
+            <h:panelGroup rendered="#{loginBean.loggedIn}">
+                <li>
+                    <h:form>
+                        <h:commandButton value="Cerrar Sesión" action="#{loginBean.logout}" styleClass="action_btn"/>
+                    </h:form>
+                </li>
+            </h:panelGroup>
+        </div>
+                <main>
+        <section class="contenedor_textLo">
+            <h1 class="titulo_login">BIENVENIDO A <span class="text_logo">Sabor Opinion</span></h1>
+            <p class="info_login">Por favor, ingresa tus credenciales para acceder a tu cuenta.</p>
+        </section>
+        <div class="contenedor_login">
+            <h1 class="text_inicio">REGISTRATE</h1>
+            <p class="info_inicio">Se parte de la familia Sabor Opinion</p>
+            <section class="contenedor_input">
+                <h:form id="registroForm">
+                    <div>
+                        <h1 class="text_login1">Usuario</h1>
+                        <h:inputText id="username" value="#{registerBean.username}" required="true" styleClass="input">
+                            <f:passThroughAttribute name="placeholder" value="Usuario"/>
+                        </h:inputText>
+                        <br/><br/>
+                        
+                        <h1 class="text_login">Contraseña</h1>
+                        <h:inputSecret id="password" value="#{registerBean.password}" required="true" styleClass="input">
+                            <f:passThroughAttribute name="placeholder" value="Contraseña"/>
+                        </h:inputSecret>
+                        <br/><br/>
+                        
+                        <h1 class="text_login">Email</h1>
+                        <h:inputText id="email" value="#{registerBean.email}" required="true" styleClass="input">
+                            <f:passThroughAttribute name="placeholder" value="Email"/>
+                        </h:inputText>
+                        <br/><br/>
+                        
+                        <h:commandButton value="Registrarse" action="#{registerBean.register}" styleClass="boton_iniciar"/>
+                    </div>
+                </h:form>
+            </section>
+            <h:outputLink value="login.xhtml" styleClass="olvi_contra">¿Ya tienes una cuenta?</h:outputLink>
+            <div>
+                <p>o ingresar con</p>
+            </div>
+            <div class="contenedor_inicio">
+                <h:graphicImage value="/imagenes/google_logo.png" alt="" styleClass="img_logos"/>
+                <h:graphicImage value="/imagenes/face_logo.svg" alt="" styleClass="img_logos"/>
+            </div>
+        </div>
+    </main>
+        <footer>
+            <h1>SABOR OPINION</h1>
+        </footer>
+
+    </body>
+</html>

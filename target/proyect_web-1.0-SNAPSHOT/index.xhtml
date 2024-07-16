@@ -19,31 +19,54 @@
     </h:head>
 
     <h:body>
-        <div class="navbar">
+         <div class="navbar">
             <div class="logo">
                 <h:link outcome="index.xhtml">
                     <h:graphicImage url="imagenes/Logo_SaborOpinion.png" alt="logo" height="150px" width="150px" />
                 </h:link>
             </div>
-              <ul class="links">
-            <li><h:link class="a" outcome="#">Inicio</h:link></li>
-            <li><h:link class="a" outcome="#">Nosotros</h:link></li>
-            <li><h:link class="a" outcome="#">Reseñas</h:link></li>
-            <li><h:link class="a" outcome="#">Contacto</h:link></li>
-            <li><h:link class="a" outcome="#">Restaurante</h:link></li>
-        </ul>
+            <ul class="links">
+                <li><h:link class="a" outcome="index.xhtml">Inicio</h:link></li>
+                <li><h:link class="a" outcome="nosotros.xhtml">Nosotros</h:link></li>
+                <li><h:link class="a" outcome="subcontac.xhtml">Contacto</h:link></li>
+                <li><h:link class="a" outcome="restaurantes.xhtml">Restaurante</h:link></li>
+                
+                <h:panelGroup rendered="#{loginBean.loggedIn}">
+                    <li><h:outputText value="Hola, #{loginBean.sessionUsername}" styleClass="a"/></li>
+                </h:panelGroup>
+            </ul>
 
-        <h:link outcome="login.xhtml" styleClass="action_btn">Iniciar Sesion</h:link>
-    </div>
+            <h:panelGroup rendered="#{!loginBean.loggedIn}">
+                <h:link outcome="login.xhtml" styleClass="action_btn">Iniciar Sesion</h:link>
+            </h:panelGroup>
+            <h:panelGroup rendered="#{loginBean.loggedIn}">
+                <h:form>
+                    <h:commandButton value="Cerrar Sesión" action="#{loginBean.logout}" styleClass="action_btn"/>
+                </h:form>
+            </h:panelGroup>
+        </div>
 
-    <div class="dropdown_menu">
-        <li><h:link class="a" outcome="#">Inicio</h:link></li>
-        <li><h:link class="a" outcome="#">Nosotros</h:link></li>
-        <li><h:link class="a" outcome="#">Reseñas</h:link></li>
-        <li><h:link class="a" outcome="#">Contacto</h:link></li>
-        <li><h:link class="a" outcome="contac.xhtml">Restaurante</h:link></li>
-        <li><h:link  class="a" outcome="login.xhtml" styleClass="action_btn">Iniciar Sesion</h:link></li>
-    </div>
+        <div class="dropdown_menu">
+            <li><h:link class="a" outcome="index.xhtml">Inicio</h:link></li>
+            <li><h:link class="a" outcome="nosotros.xhtml">Nosotros</h:link></li>
+            <li><h:link class="a" outcome="subcontac.xhtml">Contacto</h:link></li>
+            <li><h:link class="a" outcome="restaurantes.xhtml">Restaurante</h:link></li>
+
+            <h:panelGroup rendered="#{loginBean.loggedIn}">
+                <li><h:outputText value="Hola, #{loginBean.sessionUsername}" styleClass="a"/></li>
+            </h:panelGroup>
+
+            <h:panelGroup rendered="#{!loginBean.loggedIn}">
+                <li><h:link class="a" outcome="login.xhtml" styleClass="action_btn">Iniciar Sesion</h:link></li>
+            </h:panelGroup>
+            <h:panelGroup rendered="#{loginBean.loggedIn}">
+                <li>
+                    <h:form>
+                        <h:commandButton value="Cerrar Sesión" action="#{loginBean.logout}" styleClass="action_btn"/>
+                    </h:form>
+                </li>
+            </h:panelGroup>
+        </div>
 
         <div class="container2">
             <div class="background-image"></div>
@@ -155,6 +178,9 @@
                 </div>
             </div>
         </div>
+        <footer>
+        <h1>SABOR OPINION</h1>
+    </footer>
     </h:body>
 </html>
 

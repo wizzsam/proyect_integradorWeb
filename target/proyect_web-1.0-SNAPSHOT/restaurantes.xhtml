@@ -14,322 +14,201 @@
         <link rel="stylesheet" href="css/contacto.css"/>
         <link rel="stylesheet" href="css/restaurante.css"/>
     </h:head>
-    <body>
+    <h:body>
         <h:form enctype="multipart/form-data">
             <div class="navbar">
                 <div class="logo">
                     <h:link outcome="index.xhtml">
-                        <h:graphicImage value="imagenes/Logo_SaborOpinion.png" alt="logo" height="150" width="150"/>
+                        <h:graphicImage url="imagenes/Logo_SaborOpinion.png" alt="logo" height="150px" width="150px" />
                     </h:link>
                 </div>
-
                 <ul class="links">
-                         <li><h:link outcome="index.xhtml">Inicio</h:link></li>
-                <li><h:link outcome="nosotros.xhtml">Nosotros</h:link></li>
-                <li><h:link outcome="resena.xhtml">Reseñas</h:link></li>
-                <li><h:link outcome="contact.xhtml">Contacto</h:link></li>
+                    <li><h:link class="a" outcome="index.xhtml">Inicio</h:link></li>
+                    <li><h:link class="a" outcome="nosotros.xhtml">Nosotros</h:link></li>
+                    <li><h:link class="a" outcome="subcontac.xhtml">Contacto</h:link></li>
+                    <li><h:link class="a" outcome="restaurantes.xhtml">Restaurante</h:link></li>
+
+                    <h:panelGroup rendered="#{loginBean.loggedIn}">
+                        <li><h:outputText value="Hola, #{loginBean.sessionUsername}" styleClass="a"/></li>
+                    </h:panelGroup>
                 </ul>
 
-                <h:link outcome="login.xhtml" styleClass="action_btn">Iniciar Sesion</h:link>
+                <h:panelGroup rendered="#{!loginBean.loggedIn}">
+                    <h:link outcome="login.xhtml" styleClass="action_btn">Iniciar Sesion</h:link>
+                </h:panelGroup>
+                <h:panelGroup rendered="#{loginBean.loggedIn}">
+                    <h:form>
+                        <h:commandButton value="Cerrar Sesión" action="#{loginBean.logout}" styleClass="action_btn"/>
+                    </h:form>
+                </h:panelGroup>
             </div>
 
             <div class="dropdown_menu">
-                <li><h:link class="a" outcome="#">Inicio</h:link></li>
-                <li><h:link class="a" outcome="#">Nosotros</h:link></li>
-                <li><h:link class="a" outcome="#">Reseñas</h:link></li>
-                <li><h:link class="a" outcome="#">Contacto</h:link></li>
-                <li><h:link class="a" outcome="contac.xhtml">Restaurante</h:link></li>
-                <li><h:link  class="a" outcome="login.xhtml" styleClass="action_btn">Iniciar Sesion</h:link></li>
-            </div>
+                <li><h:link class="a" outcome="index.xhtml">Inicio</h:link></li>
+                <li><h:link class="a" outcome="nosotros.xhtml">Nosotros</h:link></li>
+                <li><h:link class="a" outcome="subcontac.xhtml">Contacto</h:link></li>
+                <li><h:link class="a" outcome="restaurantes.xhtml">Restaurante</h:link></li>
 
-            <div class="contenedor_inicio">
-                <h:graphicImage class="img_restaurante" value="imagenes/restaurante.jpg" alt="imagen_restaurante"/>
-                <div class="buscador">
-                    <h1 class="texto_centrado">Buscar Restaurante</h1>
-                    <h:inputText class="input_buscar"/>
-                    <h:commandButton value="Buscar" type="button" styleClass="boton_buscar"/>
-                </div>
-            </div>
+                <h:panelGroup rendered="#{loginBean.loggedIn}">
+                    <li><h:outputText value="Hola, #{loginBean.sessionUsername}" styleClass="a"/></li>
+                </h:panelGroup>
 
+                <h:panelGroup rendered="#{!loginBean.loggedIn}">
+                    <li><h:link class="a" outcome="login.xhtml" styleClass="action_btn">Iniciar Sesion</h:link></li>
+                </h:panelGroup>
+                <h:panelGroup rendered="#{loginBean.loggedIn}">
+                    <li>
+                        <h:form>
+                            <h:commandButton value="Cerrar Sesión" action="#{loginBean.logout}" styleClass="action_btn"/>
+                        </h:form>
+                    </li>
+                </h:panelGroup>
+            </div>
+  <div class="contenedor_inicio">
+            <h:graphicImage class="img_restaurante" value="imagenes/restaurante.jpg" alt="imagen_restaurante"/>
+            <div class="buscador">
+                <h1 class="texto_centrado">Buscar Restaurante</h1>
+                <h:inputText class="input_buscar"/>
+                <h:commandButton value="Buscar" type="button" styleClass="boton_buscar"/>
+            </div>
+        </div>
+
+        <div class="contenedor_combo">
+            <h:selectOneMenu class="combo">
+                <f:selectItem itemLabel="Argentina" itemValue="argentina"/>
+                <f:selectItem itemLabel="Bolivia" itemValue="bolivia"/>
+                <f:selectItem itemLabel="Brasil" itemValue="brasil"/>
+                <f:selectItem itemLabel="Chile" itemValue="chile"/>
+                <f:selectItem itemLabel="Colombia" itemValue="colombia"/>
+                <f:selectItem itemLabel="Costa Rica" itemValue="costa_rica"/>
+                <f:selectItem itemLabel="Cuba" itemValue="cuba"/>
+                <f:selectItem itemLabel="República Dominicana" itemValue="dominicana"/>
+                <f:selectItem itemLabel="Ecuador" itemValue="ecuador"/>
+                <f:selectItem itemLabel="El Salvador" itemValue="el_salvador"/>
+                <f:selectItem itemLabel="Guatemala" itemValue="guatemala"/>
+                <f:selectItem itemLabel="Honduras" itemValue="honduras"/>
+                <f:selectItem itemLabel="México" itemValue="mexico"/>
+                <f:selectItem itemLabel="Nicaragua" itemValue="nicaragua"/>
+                <f:selectItem itemLabel="Panamá" itemValue="panama"/>
+                <f:selectItem itemLabel="Paraguay" itemValue="paraguay"/>
+                <f:selectItem itemLabel="Perú" itemValue="peru"/>
+                <f:selectItem itemLabel="Puerto Rico" itemValue="puerto_rico"/>
+                <f:selectItem itemLabel="Uruguay" itemValue="uruguay"/>
+                <f:selectItem itemLabel="Venezuela" itemValue="venezuela"/>
+            </h:selectOneMenu>
             <div class="contenedor_combo">
                 <h:selectOneMenu class="combo">
-                    <f:selectItem itemLabel="Argentina" itemValue="argentina"/>
-                    <f:selectItem itemLabel="Bolivia" itemValue="bolivia"/>
-                    <f:selectItem itemLabel="Brasil" itemValue="brasil"/>
-                    <f:selectItem itemLabel="Chile" itemValue="chile"/>
-                    <f:selectItem itemLabel="Colombia" itemValue="colombia"/>
-                    <f:selectItem itemLabel="Costa Rica" itemValue="costa_rica"/>
-                    <f:selectItem itemLabel="Cuba" itemValue="cuba"/>
-                    <f:selectItem itemLabel="República Dominicana" itemValue="dominicana"/>
-                    <f:selectItem itemLabel="Ecuador" itemValue="ecuador"/>
-                    <f:selectItem itemLabel="El Salvador" itemValue="el_salvador"/>
-                    <f:selectItem itemLabel="Guatemala" itemValue="guatemala"/>
-                    <f:selectItem itemLabel="Honduras" itemValue="honduras"/>
-                    <f:selectItem itemLabel="México" itemValue="mexico"/>
-                    <f:selectItem itemLabel="Nicaragua" itemValue="nicaragua"/>
-                    <f:selectItem itemLabel="Panamá" itemValue="panama"/>
-                    <f:selectItem itemLabel="Paraguay" itemValue="paraguay"/>
-                    <f:selectItem itemLabel="Perú" itemValue="peru"/>
-                    <f:selectItem itemLabel="Puerto Rico" itemValue="puerto_rico"/>
-                    <f:selectItem itemLabel="Uruguay" itemValue="uruguay"/>
-                    <f:selectItem itemLabel="Venezuela" itemValue="venezuela"/>
+                    <f:selectItem itemLabel="Buenos Aires" itemValue="buenos_aires"/>
+                    <f:selectItem itemLabel="La Paz" itemValue="la_paz"/>
+                    <f:selectItem itemLabel="São Paulo" itemValue="sao_paulo"/>
+                    <f:selectItem itemLabel="Santiago" itemValue="santiago"/>
+                    <f:selectItem itemLabel="Bogotá" itemValue="bogota"/>
+                    <f:selectItem itemLabel="San José" itemValue="san_jose"/>
+                    <f:selectItem itemLabel="La Habana" itemValue="havana"/>
+                    <f:selectItem itemLabel="Santo Domingo" itemValue="santo_domingo"/>
+                    <f:selectItem itemLabel="Quito" itemValue="quito"/>
+                    <f:selectItem itemLabel="San Salvador" itemValue="san_salvador"/>
+                    <f:selectItem itemLabel="Ciudad de Guatemala" itemValue="guatemala_city"/>
+                    <f:selectItem itemLabel="Tegucigalpa" itemValue="tegucigalpa"/>
+                    <f:selectItem itemLabel="Ciudad de México" itemValue="mexico_city"/>
+                    <f:selectItem itemLabel="Managua" itemValue="managua"/>
+                    <f:selectItem itemLabel="Ciudad de Panamá" itemValue="panama_city"/>
+                    <f:selectItem itemLabel="Asunción" itemValue="asuncion"/>
+                    <f:selectItem itemLabel="Lima" itemValue="lima"/>
+                    <f:selectItem itemLabel="San Juan" itemValue="san_juan"/>
+                    <f:selectItem itemLabel="Montevideo" itemValue="montevideo"/>
+                    <f:selectItem itemLabel="Caracas" itemValue="caracas"/>
                 </h:selectOneMenu>
-                <div class="contenedor_combo">
-                    <h:selectOneMenu class="combo">
-                        <f:selectItem itemLabel="Buenos Aires" itemValue="buenos_aires"/>
-                        <f:selectItem itemLabel="La Paz" itemValue="la_paz"/>
-                        <f:selectItem itemLabel="São Paulo" itemValue="sao_paulo"/>
-                        <f:selectItem itemLabel="Santiago" itemValue="santiago"/>
-                        <f:selectItem itemLabel="Bogotá" itemValue="bogota"/>
-                        <f:selectItem itemLabel="San José" itemValue="san_jose"/>
-                        <f:selectItem itemLabel="La Habana" itemValue="havana"/>
-                        <f:selectItem itemLabel="Santo Domingo" itemValue="santo_domingo"/>
-                        <f:selectItem itemLabel="Quito" itemValue="quito"/>
-                        <f:selectItem itemLabel="San Salvador" itemValue="san_salvador"/>
-                        <f:selectItem itemLabel="Ciudad de Guatemala" itemValue="guatemala_city"/>
-                        <f:selectItem itemLabel="Tegucigalpa" itemValue="tegucigalpa"/>
-                        <f:selectItem itemLabel="Ciudad de México" itemValue="mexico_city"/>
-                        <f:selectItem itemLabel="Managua" itemValue="managua"/>
-                        <f:selectItem itemLabel="Ciudad de Panamá" itemValue="panama_city"/>
-                        <f:selectItem itemLabel="Asunción" itemValue="asuncion"/>
-                        <f:selectItem itemLabel="Lima" itemValue="lima"/>
-                        <f:selectItem itemLabel="San Juan" itemValue="san_juan"/>
-                        <f:selectItem itemLabel="Montevideo" itemValue="montevideo"/>
-                        <f:selectItem itemLabel="Caracas" itemValue="caracas"/>
-                    </h:selectOneMenu>
+            </div>
+        </div>
+        <div class="contenedor_nego">
+            <div class="contenedor_filtro">
+                <h1>FILTRAR</h1>
+                <h2>COMIDAS DEL DÍA</h2>
+                <div class="contenedor_check">
+                    <label>
+                        <h:selectBooleanCheckbox id="desayuno"/>
+                        Desayuno
+                    </label><br/>
+                    <label>
+                        <h:selectBooleanCheckbox id="almuerzo"/>
+                        Almuerzo
+                    </label><br/>
+                    <label>
+                        <h:selectBooleanCheckbox id="cena"/>
+                        Cena
+                    </label><br/>
+                </div>
+                <h2>TIPOS DE COMIDA</h2>
+                <div class="contenedor_check">
+                    <label>
+                        <h:selectBooleanCheckbox id="oriental"/>
+                        Oriental
+                    </label><br/>
+                    <label>
+                        <h:selectBooleanCheckbox id="nacional"/>
+                        Nacional
+                    </label><br/>
+                    <label>
+                        <h:selectBooleanCheckbox id="japonesa"/>
+                        Japonesa
+                    </label><br/>
+                    <label>
+                        <h:selectBooleanCheckbox id="vegana"/>
+                        Vegana
+                    </label><br/>
+                </div>
+                <h2>PRECIO</h2>
+                <div class="contenedor_check">
+                    <label>
+                        <h:selectBooleanCheckbox id="caro"/>
+                        Caro
+                    </label><br/>
+                    <label>
+                        <h:selectBooleanCheckbox id="economico"/>
+                        Económico
+                    </label><br/>
+                    <label>
+                        <h:selectBooleanCheckbox id="moderado"/>
+                        Moderado
+                    </label><br/>
+                </div>
+                <h2>TIPO DE ESTABLECIMIENTO</h2>
+                <div class="contenedor_check">
+                    <label>
+                        <h:selectBooleanCheckbox id="restaurante"/>
+                        Restaurante
+                    </label><br/>
+                    <label>
+                        <h:selectBooleanCheckbox id="huarique"/>
+                        Huarique
+                    </label><br/>
+                    <label>
+                        <h:selectBooleanCheckbox id="al_paso"/>
+                        Al paso
+                    </label><br/>
                 </div>
             </div>
-            <div class="contenedor_nego">
-                <div class="contenedor_filtro">
-                    <h1>FILTRAR</h1>
-                    <h2>COMIDAS DEL DÍA</h2>
-                    <div class="contenedor_check">
-                        <label>
-                            <h:selectBooleanCheckbox id="desayuno"/>
-                            Desayuno
-                        </label><br/>
-                        <label>
-                            <h:selectBooleanCheckbox id="almuerzo"/>
-                            Almuerzo
-                        </label><br/>
-                        <label>
-                            <h:selectBooleanCheckbox id="cena"/>
-                            Cena
-                        </label><br/>
-                    </div>
-                    <h2>TIPOS DE COMIDA</h2>
-                    <div class="contenedor_check">
-                        <label>
-                            <h:selectBooleanCheckbox id="oriental"/>
-                            Oriental
-                        </label><br/>
-                        <label>
-                            <h:selectBooleanCheckbox id="nacional"/>
-                            Nacional
-                        </label><br/>
-                        <label>
-                            <h:selectBooleanCheckbox id="japonesa"/>
-                            Japonesa
-                        </label><br/>
-                        <label>
-                            <h:selectBooleanCheckbox id="vegana"/>
-                            Vegana
-                        </label><br/>
-                    </div>
-                    <h2>PRECIO</h2>
-                    <div class="contenedor_check">
-                        <label>
-                            <h:selectBooleanCheckbox id="caro"/>
-                            Caro
-                        </label><br/>
-                        <label>
-                            <h:selectBooleanCheckbox id="economico"/>
-                            Económico
-                        </label><br/>
-                        <label>
-                            <h:selectBooleanCheckbox id="moderado"/>
-                            Moderado
-                        </label><br/>
-                    </div>
-                    <h2>TIPO DE ESTABLECIMIENTO</h2>
-                    <div class="contenedor_check">
-                        <label>
-                            <h:selectBooleanCheckbox id="restaurante"/>
-                            Restaurante
-                        </label><br/>
-                        <label>
-                            <h:selectBooleanCheckbox id="huarique"/>
-                            Huarique
-                        </label><br/>
-                        <label>
-                            <h:selectBooleanCheckbox id="al_paso"/>
-                            Al paso
-                        </label><br/>
-                    </div>
-                </div>
-
-                <div class="contenedor_target" id="contenedor_target">
-                    <!-- Tarjetas aquí -->
-                    <div class="contenedor_tarjeta">
-                        <h:graphicImage value="imagenes/porton_gau.jpeg" alt="Imagen"/>
-                        <div class="conte">
-                            <h1>PORTON GAUCHO</h1>
-                            <h:commandButton value="Ir" action="someAction"/>
+            <div class="contenedor_target" id="contenedor_target">
+                <h:dataTable value="#{restauranteBean.restaurantes}" var="restaurante" styleClass="table">
+                    <h:column>
+                        <div class="contenedor_tarjeta">
+                            <h:graphicImage value="#{restaurante.imagen1}" alt="Imagen"/>
+                            <div class="conte">
+                                <h1>#{restaurante.nombreRestaurante1}</h1>
+                                <h:commandButton value="Ir" action="someAction"/>
+                            </div>
+                            <div class="conte">
+                                <h1>★★★★★</h1>
+                                <p>1500 opiniones</p>
+                            </div>
+                            <h1>#{restaurante.direccionRestaurante}</h1>
                         </div>
-                        <div class="conte">
-                            <h1>★★★★★</h1>
-                            <p>1500 opiniones</p>
-                        </div>
-                        <h1>Nuevo chimbote, Perú</h1>
-                    </div>
-                    <div class="contenedor_tarjeta">
-                        <h:graphicImage value="imagenes/porton_gau.jpeg" alt="Imagen"/>
-                        <div class="conte">
-                            <h1>PORTON GAUCHO</h1>
-                            <h:commandButton value="Ir" action="someAction"/>
-                        </div>
-                        <div class="conte">
-                            <h1>★★★★★</h1>
-                            <p>1500 opiniones</p>
-                        </div>
-                        <h1>Nuevo chimbote, Perú</h1>
-                    </div>
-                    <div class="contenedor_tarjeta">
-                        <h:graphicImage value="imagenes/porton_gau.jpeg" alt="Imagen"/>
-                        <div class="conte">
-                            <h1>PORTON GAUCHO</h1>
-                            <h:commandButton value="Ir" action="someAction"/>
-                        </div>
-                        <div class="conte">
-                            <h1>★★★★★</h1>
-                            <p>1500 opiniones</p>
-                        </div>
-                        <h1>Nuevo chimbote, Perú</h1>
-                    </div>
-                    <div class="contenedor_tarjeta">
-                        <h:graphicImage value="imagenes/porton_gau.jpeg" alt="Imagen"/>
-                        <div class="conte">
-                            <h1>PORTON GAUCHO</h1>
-                            <h:commandButton value="Ir" action="someAction"/>
-                        </div>
-                        <div class="conte">
-                            <h1>★★★★★</h1>
-                            <p>1500 opiniones</p>
-                        </div>
-                        <h1>Nuevo chimbote, Perú</h1>
-                    </div>
-                    <div class="contenedor_tarjeta">
-                        <h:graphicImage value="imagenes/porton_gau.jpeg" alt="Imagen"/>
-                        <div class="conte">
-                            <h1>PORTON GAUCHO</h1>
-                            <h:commandButton value="Ir" action="someAction"/>
-                        </div>
-                        <div class="conte">
-                            <h1>★★★★★</h1>
-                            <p>1500 opiniones</p>
-                        </div>
-                        <h1>Nuevo chimbote, Perú</h1>
-                    </div>
-                    <div class="contenedor_tarjeta">
-                        <h:graphicImage value="imagenes/porton_gau.jpeg" alt="Imagen"/>
-                        <div class="conte">
-                            <h1>PORTON GAUCHO</h1>
-                            <h:commandButton value="Ir" action="someAction"/>
-                        </div>
-                        <div class="conte">
-                            <h1>★★★★★</h1>
-                            <p>1500 opiniones</p>
-                        </div>
-                        <h1>Nuevo chimbote, Perú</h1>
-                    </div>
-                    <div class="contenedor_tarjeta">
-                        <h:graphicImage value="imagenes/porton_gau.jpeg" alt="Imagen"/>
-                        <div class="conte">
-                            <h1>PORTON GAUCHO</h1>
-                            <h:commandButton value="Ir" action="someAction"/>
-                        </div>
-                        <div class="conte">
-                            <h1>★★★★★</h1>
-                            <p>1500 opiniones</p>
-                        </div>
-                        <h1>Nuevo chimbote, Perú</h1>
-                    </div>
-                    <div class="contenedor_tarjeta">
-                        <h:graphicImage value="imagenes/porton_gau.jpeg" alt="Imagen"/>
-                        <div class="conte">
-                            <h1>PORTON GAUCHO</h1>
-                            <h:commandButton value="Ir" action="someAction"/>
-                        </div>
-                        <div class="conte">
-                            <h1>★★★★★</h1>
-                            <p>1500 opiniones</p>
-                        </div>
-                        <h1>Nuevo chimbote, Perú</h1>
-                    </div>
-                    <div class="contenedor_tarjeta">
-                        <h:graphicImage value="imagenes/porton_gau.jpeg" alt="Imagen"/>
-                        <div class="conte">
-                            <h1>PORTON GAUCHO</h1>
-                            <h:commandButton value="Ir" action="someAction"/>
-                        </div>
-                        <div class="conte">
-                            <h1>★★★★★</h1>
-                            <p>1500 opiniones</p>
-                        </div>
-                        <h1>Nuevo chimbote, Perú</h1>
-                    </div>
-                    <div class="contenedor_tarjeta">
-                        <h:graphicImage value="imagenes/porton_gau.jpeg" alt="Imagen"/>
-                        <div class="conte">
-                            <h1>PORTON GAUCHO</h1>
-                            <h:commandButton value="Ir" action="someAction"/>
-                        </div>
-                        <div class="conte">
-                            <h1>★★★★★</h1>
-                            <p>1500 opiniones</p>
-                        </div>
-                        <h1>Nuevo chimbote, Perú</h1>
-                    </div>
-                    <div class="contenedor_tarjeta">
-                        <h:graphicImage value="imagenes/porton_gau.jpeg" alt="Imagen"/>
-                        <div class="conte">
-                            <h1>PORTON GAUCHO</h1>
-                            <h:commandButton value="Ir" action="someAction"/>
-                        </div>
-                        <div class="conte">
-                            <h1>★★★★★</h1>
-                            <p>1500 opiniones</p>
-                        </div>
-                        <h1>Nuevo chimbote, Perú</h1>
-                    </div>
-                    <div class="contenedor_tarjeta">
-                        <h:graphicImage value="imagenes/porton_gau.jpeg" alt="Imagen"/>
-                        <div class="conte">
-                            <h1>PORTON GAUCHO</h1>
-                            <h:commandButton value="Ir" action="someAction"/>
-                        </div>
-                        <div class="conte">
-                            <h1>★★★★★</h1>
-                            <p>1500 opiniones</p>
-                        </div>
-                        <h1>Nuevo chimbote, Perú</h1>
-                    </div>
-                    <div class="contenedor_tarjeta">
-                        <h:graphicImage value="imagenes/milsa.jpg" alt="Imagen"/>
-                        <div class="conte">
-                            <h1>PORTON GAUCHO</h1>
-                            <h:commandButton value="Ir" action="someAction"/>
-                        </div>
-                        <div class="conte">
-                            <h1>★★★★★</h1>
-                            <p>1500 opiniones</p>
-                        </div>
-                        <h1>Nuevo chimbote, Perú</h1>
-                    </div>
-                </div>
+                    </h:column>
+                </h:dataTable>
             </div>
-        </h:form>
-
+        </div>
+    </h:form>
         <div class="paginacion">
             <button id="prevBtn" onclick="prevPage()">Anterior</button>
             <button id="nextBtn" onclick="nextPage()">Siguiente</button>
@@ -340,5 +219,5 @@
         </footer>
 
         <script src="js/script.js"></script>
-    </body>
+    </h:body>
 </html>
