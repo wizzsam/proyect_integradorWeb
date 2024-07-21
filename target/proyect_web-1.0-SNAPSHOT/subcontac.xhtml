@@ -12,9 +12,17 @@
         <link rel="stylesheet" href="css/contacto.css"/>
         <link rel="stylesheet" href="css/restaurante.css"/>
         <link rel="stylesheet" href="css/subcontac.css"/>
+         
+    <h:outputScript>
+        function mostrarAlerta() {
+            alert('Felicidades, Haz registrado correctamente tu Establecimiento :D ');
+        }
+    </h:outputScript>
     </h:head>
 
     <h:body>
+        <f:event type="preRenderView" listener="#{restauranteBean.verificarSesion}" />
+        <h:messages globalOnly="true" />
         <div class="navbar">
             <div class="logo">
                 <h:link outcome="index.xhtml">
@@ -206,7 +214,7 @@
                         <h:inputText id="imagen3" value="#{restauranteBean.imagen3}" styleClass="input-text"/>
                     </div>
                 </div>
-                <h:commandButton value="Registrar" action="#{restauranteBean.registrar}" styleClass="btn-registrar" />
+                <h:commandButton value="Registrar" action="#{restauranteBean.registrar}" styleClass="btn-registrar" onclick="mostrarAlerta();" />
             </h:form>
         </div>
         <footer>

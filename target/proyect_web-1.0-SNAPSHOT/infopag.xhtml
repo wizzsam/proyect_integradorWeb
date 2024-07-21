@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Restaurante</title>
+        <link rel="stylesheet" href="css/navbar.css"/>
+        <link rel="stylesheet" href="css/reset.css"/>
+        <link rel="stylesheet" href="css/info_pag.css"/>
+    </h:head>
+    <h:body>
+        <div class="navbar">
+            <div class="logo">
+                <h:link outcome="index.xhtml">
+                    <h:graphicImage url="imagenes/Logo_SaborOpinion.png" alt="logo" height="150px" width="150px" />
+                </h:link>
+            </div>
+            <ul class="links">
+                <li><h:link outcome="index.xhtml" styleClass="a">Inicio</h:link></li>
+                <li><h:link outcome="nosotros.xhtml" styleClass="a">Nosotros</h:link></li>
+                <li><h:link outcome="subcontac.xhtml" styleClass="a">Contacto</h:link></li>
+                <li><h:link outcome="restaurantes.xhtml" styleClass="a">Restaurante</h:link></li>
+                <h:panelGroup rendered="#{loginBean.loggedIn}">
+                    <li><h:outputText value="Hola, #{loginBean.sessionUsername}" styleClass="a"/></li>
+                </h:panelGroup>
+            </ul>
+
+            <h:panelGroup rendered="#{!loginBean.loggedIn}">
+                <h:link outcome="login.xhtml" styleClass="action_btn">Iniciar Sesion</h:link>
+            </h:panelGroup>
+            <h:panelGroup rendered="#{loginBean.loggedIn}">
+                <h:form>
+                    <h:commandButton value="Cerrar Sesión" action="#{loginBean.logout}" styleClass="action_btn"/>
+                </h:form>
+            </h:panelGroup>
+        </div>
+
+            <h1>#{restauranteBean.nombreRestaurante1}</h1>
+
+        <section class="imagenes">
+            <h:graphicImage value="#{restauranteBean.imagen2}" alt="Imagen 1"/>
+            <div class="column">
+                <h:graphicImage value="#{restauranteBean.imagen3}" alt="Imagen 2"/>
+            </div>
+        </section>
+
+         <div class="info">
+            <h2>SOBRE NOSOTROS</h2>
+            <p>#{restauranteBean.nombreRestaurante2}</p>
+            <p>#{restauranteBean.tipoComida1}</p>
+            <p>#{restauranteBean.comidaDia}</p>
+            <p>#{restauranteBean.tipoEstablecimiento}</p>
+            <p>#{restauranteBean.direccionRestaurante}</p>
+            <p>#{restauranteBean.telefono}</p>
+            <p>#{restauranteBean.paginaWeb}</p>
+            <p>#{restauranteBean.precio}</p>
+        </div>
+
+        <div class="carta">
+            <section class="card">
+                <label>Clasificación</label>
+                <p class="rating">★★★★★</p>
+                <p>1.704 opiniones</p>
+                <p>#{restauranteBean.direccionRestaurante}</p>
+            </section>
+            <section class="card">
+                <label>Detalles</label>
+                <h4>Tipo de Comida</h4>
+                <p>#{restauranteBean.tipoComida1}</p>
+                <h4>Comida del Día</h4>
+                <p>#{restauranteBean.comidaDia}</p>
+                <h4>Establecimiento</h4>
+                <p>#{restauranteBean.tipoEstablecimiento}</p>
+                <h4>Precio</h4>
+                <p>#{restauranteBean.precio}</p>
+            </section>
+            <section class="card">
+                <Label>Ubicación</Label>
+                <p><iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15757.256669641905!2d-78.5319322!3d-9.1260701!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ab84458083d4e7%3A0x58e60606dfba3039!2sPort%C3%B3n%20Gaucho!5e0!3m2!1sen!2spe!4v1721178766587!5m2!1sen!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+            </section>
+        </div>
+        <h:form class="formu">
+            <h:panelGrid columns="2" cellpadding="5" class="panel">
+                <h:outputLabel for="idRestaurante" value="ID Restaurante:" class="output" />
+                <h:inputText id="idRestaurante" value="#{reseñaBean.idRestaurante}" required="true" class="inputText"/>
+
+                <h:outputLabel for="descripcion" value="Descripción:"  class="output" />
+                <h:inputTextarea id="descripcion" value="#{reseñaBean.descripcion}" required="true" class="inputTextarea"/>
+
+                <h:outputLabel for="calificacion" value="Calificación:" class="output" />
+                <h:selectOneMenu id="calificacion" value="#{reseñaBean.calificacion}" class="selectOne">
+                    <f:selectItem itemLabel="1" itemValue="1" class="select-Item" />
+                    <f:selectItem itemLabel="2" itemValue="2" class="select-Item" />
+                    <f:selectItem itemLabel="3" itemValue="3" class="select-Item"/>
+                    <f:selectItem itemLabel="4" itemValue="4" class="select-Item"/>
+                    <f:selectItem itemLabel="5" itemValue="5" class="select-Item"/>
+                </h:selectOneMenu>
+
+                <h:outputLabel for="imagen" value="Sube una foto:" class="output"  />
+                <h:inputFile id="imagen" value="#{reseñaBean.imagen}" />
+
+            </h:panelGrid>
+
+            <h:commandButton value="Registrar Reseña" action="#{reseñaBean.registrar}" class="command" />
+        </h:form>
+    </h:body>
+    
+</html>

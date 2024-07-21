@@ -1,0 +1,160 @@
+
+.imagenes {
+    display: flex;
+    align-items: center;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.imagenes img:first-child {
+    width: auto;
+    height: auto;
+    border: 1px solid #00000000;
+    border-radius: 20px;
+}
+
+.column .form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.info p{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    margin: 20px 0;
+    text-align:justify;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.column img {
+    width: 100%;
+    height: auto;
+    padding-top: 5px;
+    padding-left: 5px;
+    border: 1px solid #00000000;
+    border-radius: 20px;
+}
+
+
+h1 {
+    font-size: 3rem;
+    margin: 20px 0;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+}
+
+h2,h3{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    margin: 20px 0;
+    text-align: center;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.carta {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.card {
+    flex: 1;
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+}
+iframe {
+    width: 100%;
+    height: 300px;
+}
+
+.carta section{
+    width: 100%;
+    height: 350px;
+    font-size: 1rem;
+    border: 1px solid #57222200;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #000000;
+    outline: none;
+}
+
+.form .input-box{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.input-box label{
+    color: #333;
+}
+
+.form :where(.input-box input, .select-box){
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    color: #707070;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 15px;
+}
+
+
+.select-box select{
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    border: 1px solid #57222200;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #707070;
+    outline: none;
+}
+
+.formu{
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.panel{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.output{
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.inputText, .inputTextarea, .selectOne, .input-file {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.command{
+    background: #5cb85c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.command:hover {
+    background: #4cae4c;
+}

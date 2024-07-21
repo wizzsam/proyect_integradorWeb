@@ -8,7 +8,10 @@ import model.Restaurante;
 import dao.RestauranteDao;
 import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.SessionScoped;
+import jakarta.faces.application.FacesMessage;
+import jakarta.faces.context.FacesContext;
 import jakarta.inject.Named;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -58,6 +61,15 @@ public class RestauranteBean implements Serializable {
         restaurantesFiltrados = restaurantes;
     }
 
+     public void verificarSesion() throws IOException {
+        String username = (String) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("username");
+        if (username == null) {
+            FacesContext.getCurrentInstance().getExternalContext().redirect("login.xhtml");
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_WARN, "Debe iniciar sesión", "Debe iniciar sesión para acceder a esta página."));
+        }
+    }
+    
+    
     public void filtrar() {
         restaurantesFiltrados = restaurantes.stream()
                 .filter(r -> (filtroPais == null || filtroPais.isEmpty() || r.getPais().equalsIgnoreCase(filtroPais)) &&

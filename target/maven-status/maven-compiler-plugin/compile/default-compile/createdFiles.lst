@@ -1,11 +1,11 @@
 bean\LoginBean.class
 bean\RegisterBean.class
 bean\RestauranteBean.class
-com\mycompany\proyect_web\resources\JakartaEE91Resource.class
-dao\RestauranteDao.class
 service\UserService.class
 dao\UserDao.class
 util\DBConnection.class
 com\mycompany\proyect_web\JakartaRestConfiguration.class
 model\Restaurante.class
+com\mycompany\proyect_web\resources\JakartaEE91Resource.class
+dao\RestauranteDao.class
 model\User.class

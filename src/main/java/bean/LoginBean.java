@@ -49,7 +49,7 @@ public class LoginBean implements Serializable {
             return "login"; // Mantente en la página de inicio de sesión
         }
     }
-
+    
     public String logout() {
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
         return "login?faces-redirect=true"; // Redirige a la página de inicio de sesión después de cerrar sesión
