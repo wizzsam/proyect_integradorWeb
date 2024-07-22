@@ -2,15 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      lang="en"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-
     <h:head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Restaurante</title>
         <link rel="stylesheet" href="css/navbar.css"/>
-        <link rel="stylesheet" href="css/estilos.css" />
+        <link rel="stylesheet" href="css/estilos.css"/>
         <link rel="stylesheet" href="css/reset.css"/>
         <link rel="stylesheet" href="css/contacto.css"/>
         <link rel="stylesheet" href="css/restaurante.css"/>
@@ -38,9 +36,7 @@
                     <h:link outcome="login.xhtml" styleClass="action_btn">Iniciar Sesion</h:link>
                 </h:panelGroup>
                 <h:panelGroup rendered="#{loginBean.loggedIn}">
-                    <h:form>
-                        <h:commandButton value="Cerrar Sesión" action="#{loginBean.logout}" styleClass="action_btn"/>
-                    </h:form>
+                    <h:commandButton value="Cerrar Sesión" action="#{loginBean.logout}" styleClass="action_btn"/>
                 </h:panelGroup>
             </div>
 
@@ -59,12 +55,11 @@
                 </h:panelGroup>
                 <h:panelGroup rendered="#{loginBean.loggedIn}">
                     <li>
-                        <h:form>
-                            <h:commandButton value="Cerrar Sesión" action="#{loginBean.logout}" styleClass="action_btn"/>
-                        </h:form>
+                        <h:commandButton value="Cerrar Sesión" action="#{loginBean.logout}" styleClass="action_btn"/>
                     </li>
                 </h:panelGroup>
             </div>
+
             <div class="contenedor_inicio">
                 <h:graphicImage class="img_restaurante" value="imagenes/restaurante.jpg" alt="imagen_restaurante"/>
                 <div class="buscador">
@@ -97,10 +92,10 @@
                     <f:selectItem itemLabel="Puerto Rico" itemValue="puerto_rico"/>
                     <f:selectItem itemLabel="Uruguay" itemValue="uruguay"/>
                     <f:selectItem itemLabel="Venezuela" itemValue="venezuela"/>
-                    <f:selectItem itemLabel="Japon" itemValue="japon"/>
+                    <f:selectItem itemLabel="Japón" itemValue="japon"/>
                 </h:selectOneMenu>
-
             </div>
+
             <div class="contenedor_nego">
                 <div class="contenedor_filtro">
                     <h1>FILTRAR</h1>
@@ -175,7 +170,7 @@
                             <h:graphicImage value="#{restaurante.imagen1}" alt="Imagen"/>
                             <div class="conte">
                                 <h1>#{restaurante.nombreRestaurante1}</h1>
-                                <h:commandButton class="botonir" value="Ir" action="someAction"/>
+                                <h:commandLink value="Ir" class="botonir" action="#{restauranteBean.verDetalles(restaurante.id)}"/>
                             </div>
                             <div class="conte">
                                 <h1>★★★★★</h1>

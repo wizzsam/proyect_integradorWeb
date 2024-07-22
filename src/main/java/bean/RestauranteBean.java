@@ -19,6 +19,8 @@ public class RestauranteBean implements Serializable {
 
     private String nombreRestaurante1;
     private String nombreRestaurante2;
+    private String pais;
+    private String ciudad;
     private String tipoComida1;
     private String comidaDia;
     private String tipoEstablecimiento;
@@ -29,8 +31,7 @@ public class RestauranteBean implements Serializable {
     private String imagen1;
     private String imagen2;
     private String imagen3;
-    private String pais;
-    private String ciudad; // Nuevo campo
+     // Nuevo campo
     private String filtroPais;
     private String filtroCiudad;
     private boolean filtroDesayuno;
@@ -46,7 +47,9 @@ public class RestauranteBean implements Serializable {
     private boolean filtroRestaurante;
     private boolean filtroHuarique;
     private boolean filtroAlPaso;
-
+    
+    private Restaurante restauranteSeleccionado;    
+    
     private List<Restaurante> restaurantes;
     private List<Restaurante> restaurantesFiltrados;
 
@@ -126,6 +129,29 @@ public class RestauranteBean implements Serializable {
     public List<Restaurante> getRestaurantes() {
         return restaurantesFiltrados;
     }
+    
+   public void verDetalles(int id) {
+        restauranteSeleccionado = restauranteDao.findById(id);
+        if (restauranteSeleccionado != null) {
+            FacesContext context = FacesContext.getCurrentInstance();
+            context.getExternalContext().getSessionMap().put("restauranteId", id);
+            try {
+                context.getExternalContext().redirect("detallesRestaurante.xhtml");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+   }
+
+public Restaurante getRestauranteSeleccionado() {
+    return restauranteSeleccionado;
+}
+
+public void setRestauranteSeleccionado(Restaurante restauranteSeleccionado) {
+    this.restauranteSeleccionado = restauranteSeleccionado;
+}
+
+
 
     // Getters y setters
 

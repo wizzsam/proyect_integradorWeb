@@ -9,6 +9,7 @@ package model;
  * @author abelp
  */
 public class User {
+    private int id; 
     private String username;
     private String password;
     private String email;
@@ -22,6 +23,13 @@ public class User {
     }
 
     // Getters and Setters
+    public int getId() {  // Añadir este getter
+        return id;
+    }
+
+    public void setId(int id) {  // Añadir este setter
+        this.id = id;
+    }
     public String getUsername() {
         return username;
     }

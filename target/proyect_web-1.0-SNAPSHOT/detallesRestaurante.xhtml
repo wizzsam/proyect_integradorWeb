@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Restaurante</title>
+        <link rel="stylesheet" href="css/navbar.css"/>
+        <link rel="stylesheet" href="css/reset.css"/>
+        <link rel="stylesheet" href="css/info_pag.css"/>
+         <link rel="stylesheet" href="css/styleContact.css" />
+        <link rel="stylesheet" href="css/detalles.css"/>
+    </h:head>
+    <h:body>
+        <div class="navbar">
+            <div class="logo">
+                <h:link outcome="index.xhtml">
+                    <h:graphicImage url="imagenes/Logo_SaborOpinion.png" alt="logo" height="150px" width="150px" />
+                </h:link>
+            </div>
+            <ul class="links">
+                <li><h:link outcome="index.xhtml" styleClass="a">Inicio</h:link></li>
+                <li><h:link outcome="nosotros.xhtml" styleClass="a">Nosotros</h:link></li>
+                <li><h:link outcome="subcontac.xhtml" styleClass="a">Contacto</h:link></li>
+                <li><h:link outcome="restaurantes.xhtml" styleClass="a">Restaurante</h:link></li>
+                <h:panelGroup rendered="#{loginBean.loggedIn}">
+                    <li><h:outputText value="Hola, #{loginBean.sessionUsername}" styleClass="a"/></li>
+                </h:panelGroup>
+            </ul>
+
+            <h:panelGroup rendered="#{!loginBean.loggedIn}">
+                <h:link outcome="login.xhtml" styleClass="action_btn">Iniciar Sesion</h:link>
+            </h:panelGroup>
+            <h:panelGroup rendered="#{loginBean.loggedIn}">
+                <h:form>
+                    <h:commandButton value="Cerrar Sesión" action="#{loginBean.logout}" styleClass="action_btn"/>
+                </h:form>
+            </h:panelGroup>
+        </div> 
+        
+      <div class="container">
+        <h1 class="restaurante-nombre">#{restauranteBean.restauranteSeleccionado.nombreRestaurante1}</h1>
+        
+        <div class="restaurante-imagenes">
+            <h:graphicImage value="#{restauranteBean.restauranteSeleccionado.imagen1}" alt="Imagen 1" class="restaurante-imagen"/>
+            <h:graphicImage value="#{restauranteBean.restauranteSeleccionado.imagen2}" alt="Imagen 2" class="restaurante-imagen"/>
+            <h:graphicImage value="#{restauranteBean.restauranteSeleccionado.imagen3}" alt="Imagen 3" class="restaurante-imagen"/>
+        </div>
+
+        <div class="restaurante-descripcion">
+            <p><strong>Descripción:</strong> #{restauranteBean.restauranteSeleccionado.nombreRestaurante2}</p>
+        </div>
+
+        <div class="restaurante-detalles">
+            <div class="detalle-columna">
+                <p><strong>Tipo de Comida:</strong> #{restauranteBean.restauranteSeleccionado.tipoComida1}</p>
+                <p><strong>Comida del Día:</strong> #{restauranteBean.restauranteSeleccionado.comidaDia}</p>
+                <p><strong>Tipo de Establecimiento:</strong> #{restauranteBean.restauranteSeleccionado.tipoEstablecimiento}</p>
+                <p><strong>Dirección:</strong> #{restauranteBean.restauranteSeleccionado.direccionRestaurante}</p>
+            </div>
+            <div class="detalle-columna">
+                <p><strong>Teléfono:</strong> #{restauranteBean.restauranteSeleccionado.telefono}</p>
+                <p><strong>Página Web:</strong> <a href="#{restauranteBean.restauranteSeleccionado.paginaWeb}" target="_blank">#{restauranteBean.restauranteSeleccionado.paginaWeb}</a></p>
+                <p><strong>Precio:</strong> #{restauranteBean.restauranteSeleccionado.precio}</p>
+                <p><strong>País:</strong> #{restauranteBean.restauranteSeleccionado.pais}</p>
+                <p><strong>Ciudad:</strong> #{restauranteBean.restauranteSeleccionado.ciudad}</p>
+            </div>
+        </div>
+    </div>
+
+         
+          <div class="review-container">
+            <h:dataTable value="#{reviewBean.reviews}" var="review" styleClass="review-table">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Comentario" styleClass="review-header"/>
+                    </f:facet>
+                    <h:outputText value="#{review.comment}" styleClass="review-comment"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Calificación" styleClass="review-header"/>
+                    </f:facet>
+                    <h:outputText value="#{review.rating}" styleClass="review-rating"/>
+                </h:column>
+            </h:dataTable>
+        </div>
+
+ 
+            <h:form rendered="#{loginBean.loggedIn}">
+            <div class="form-resena">
+                <h2>Agregar Reseña</h2>
+                <h:inputTextarea value="#{reviewBean.comment}" cols="30" rows="4">
+                    <f:passThroughAttribute name="placeholder" value="Escribe tu reseña aquí"/>
+                </h:inputTextarea>
+                <h:selectOneMenu value="#{reviewBean.rating}">
+                    <f:selectItem itemLabel="★✰✰✰✰" itemValue="1"/>
+                    <f:selectItem itemLabel="★★✰✰✰" itemValue="2"/>
+                    <f:selectItem itemLabel="★★★✰✰" itemValue="3"/>
+                    <f:selectItem itemLabel="★★★★✰" itemValue="4"/>
+                    <f:selectItem itemLabel="★★★★★" itemValue="5"/>
+                </h:selectOneMenu>
+                <h:commandButton value="Agregar Reseña" action="#{reviewBean.agregarReseña}" styleClass="submit-button"/>
+            </div>
+        </h:form> 
+        <h:messages globalOnly="true"/>
+    </h:body>
+    
+</html>

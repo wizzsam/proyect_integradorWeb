@@ -8,4 +8,12 @@ dao\UserDao.class
 util\DBConnection.class
 com\mycompany\proyect_web\JakartaRestConfiguration.class
 model\Restaurante.class
+<<<<<<< Updated upstream
+=======
+model\Review.class
+bean\ReviewBean.class
+dao\ReviewDao.class
+com\mycompany\proyect_web\resources\JakartaEE91Resource.class
+dao\RestauranteDao.class
+>>>>>>> Stashed changes
 model\User.class

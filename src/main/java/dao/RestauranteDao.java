@@ -21,7 +21,7 @@ public class RestauranteDao {
         try (Connection connection = DBConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             preparedStatement.setString(1, restaurante.getNombreRestaurante1());
-            preparedStatement.setString(2, restaurante.getNombreRestaurante2());
+        preparedStatement.setString(2, restaurante.getNombreRestaurante2());
             preparedStatement.setString(3, restaurante.getTipoComida1());
             preparedStatement.setString(4, restaurante.getComidaDia());
             preparedStatement.setString(5, restaurante.getTipoEstablecimiento());
@@ -75,4 +75,35 @@ public class RestauranteDao {
 
         return restaurantes;
     }
+    public Restaurante findById(int id) {
+    Restaurante restaurante = null;
+    String query = "SELECT * FROM restaurante WHERE id = ?";
+    try (Connection connection = DBConnection.getConnection();
+         PreparedStatement preparedStatement = connection.prepareStatement(query)) {
+        preparedStatement.setInt(1, id);
+        try (ResultSet resultSet = preparedStatement.executeQuery()) {
+            if (resultSet.next()) {
+                restaurante = new Restaurante();
+                restaurante.setId(resultSet.getInt("id"));
+                restaurante.setNombreRestaurante1(resultSet.getString("nombre_restaurante1"));
+                restaurante.setNombreRestaurante2(resultSet.getString("nombre_restaurante2"));
+                restaurante.setTipoComida1(resultSet.getString("tipo_comida1"));
+                restaurante.setComidaDia(resultSet.getString("comida_dia"));
+                restaurante.setTipoEstablecimiento(resultSet.getString("tipo_establecimiento"));
+                restaurante.setDireccionRestaurante(resultSet.getString("direccion_restaurante"));
+                restaurante.setTelefono(resultSet.getString("telefono"));
+                restaurante.setPaginaWeb(resultSet.getString("pagina_web"));
+                restaurante.setPrecio(resultSet.getString("precio"));
+                restaurante.setImagen1(resultSet.getString("imagen1"));
+                restaurante.setImagen2(resultSet.getString("imagen2"));
+                restaurante.setImagen3(resultSet.getString("imagen3"));
+                restaurante.setPais(resultSet.getString("pais"));
+                restaurante.setCiudad(resultSet.getString("ciudad"));
+            }
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+    return restaurante;
+}
 }

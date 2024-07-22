@@ -20,6 +20,7 @@ import java.io.Serializable;
 public class LoginBean implements Serializable {
     private String username;
     private String password;
+    private int userId;
 
     @Inject
     private UserService userService;
@@ -39,11 +40,20 @@ public class LoginBean implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
+    
+     public int getUserId() {
+        return userId;  // Añadir este getter
+    }
 
-    public String login() {
+    public void setUserId(int userId) {
+        this.userId = userId;  // Añadir este setter
+    }
+
+     public String login() {
         if (userService.validateUser(username, password)) {
             FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("username", username);
-            System.out.println("Usuario guardado en sesión: " + username);  // Línea para depuración
+            this.userId = userService.getUserIdByUsername(username);  // Obtener userId
+            FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("userId", this.userId);
             return "index?faces-redirect=true"; // Redirige a la página de inicio después de iniciar sesión
         } else {
             return "login"; // Mantente en la página de inicio de sesión

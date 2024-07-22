@@ -25,4 +25,8 @@ public class UserService {
     public boolean validateUser(String username, String password) {
         return userDao.validateUser(username, password);
     }
+    
+   public int getUserIdByUsername(String username) {
+        return userDao.getUserIdByUsername(username);
+    }
 }

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 C:\Users\abelp\Documents\GitHub\proyect_integradorWeb\src\main\java\com\mycompany\proyect_web\JakartaRestConfiguration.java
 C:\Users\abelp\Documents\GitHub\proyect_integradorWeb\src\main\java\model\Restaurante.java
 C:\Users\abelp\Documents\GitHub\proyect_integradorWeb\src\main\java\bean\RestauranteBean.java
@@ -9,3 +10,19 @@ C:\Users\abelp\Documents\GitHub\proyect_integradorWeb\src\main\java\dao\Restaura
 C:\Users\abelp\Documents\GitHub\proyect_integradorWeb\src\main\java\service\UserService.java
 C:\Users\abelp\Documents\GitHub\proyect_integradorWeb\src\main\java\com\mycompany\proyect_web\resources\JakartaEE91Resource.java
 C:\Users\abelp\Documents\GitHub\proyect_integradorWeb\src\main\java\bean\LoginBean.java
+=======
+C:\Users\tomac\OneDrive\Documentos\NetBeansProjects\proyect_integradorWeb\src\main\java\com\mycompany\proyect_web\resources\JakartaEE91Resource.java
+C:\Users\tomac\OneDrive\Documentos\NetBeansProjects\proyect_integradorWeb\src\main\java\dao\ReviewDao.java
+C:\Users\tomac\OneDrive\Documentos\NetBeansProjects\proyect_integradorWeb\src\main\java\bean\LoginBean.java
+C:\Users\tomac\OneDrive\Documentos\NetBeansProjects\proyect_integradorWeb\src\main\java\bean\RegisterBean.java
+C:\Users\tomac\OneDrive\Documentos\NetBeansProjects\proyect_integradorWeb\src\main\java\util\DBConnection.java
+C:\Users\tomac\OneDrive\Documentos\NetBeansProjects\proyect_integradorWeb\src\main\java\model\User.java
+C:\Users\tomac\OneDrive\Documentos\NetBeansProjects\proyect_integradorWeb\src\main\java\com\mycompany\proyect_web\JakartaRestConfiguration.java
+C:\Users\tomac\OneDrive\Documentos\NetBeansProjects\proyect_integradorWeb\src\main\java\service\UserService.java
+C:\Users\tomac\OneDrive\Documentos\NetBeansProjects\proyect_integradorWeb\src\main\java\bean\RestauranteBean.java
+C:\Users\tomac\OneDrive\Documentos\NetBeansProjects\proyect_integradorWeb\src\main\java\dao\UserDao.java
+C:\Users\tomac\OneDrive\Documentos\NetBeansProjects\proyect_integradorWeb\src\main\java\model\Review.java
+C:\Users\tomac\OneDrive\Documentos\NetBeansProjects\proyect_integradorWeb\src\main\java\dao\RestauranteDao.java
+C:\Users\tomac\OneDrive\Documentos\NetBeansProjects\proyect_integradorWeb\src\main\java\bean\ReviewBean.java
+C:\Users\tomac\OneDrive\Documentos\NetBeansProjects\proyect_integradorWeb\src\main\java\model\Restaurante.java
+>>>>>>> Stashed changes
